@@ -74,10 +74,10 @@ export class SosoButton extends LitElement {
     }
     button span {
       display: inline-block;
-      transition: transform 0.3s ease;
+      transition: transform 0.2s ease;
     }
     button:active span {
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
     `;
   }
