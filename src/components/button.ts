@@ -4,6 +4,7 @@ import { LitElement, html, TemplateResult, customElement, property, css, CSSResu
 export class SosoButton extends LitElement {
   @property({ type: Boolean }) outlined = false;
   @property({ type: Boolean }) solid = false;
+  @property({ type: Boolean }) disabled = false;
 
   static get styles(): CSSResult {
     return css`
@@ -79,13 +80,23 @@ export class SosoButton extends LitElement {
     button:active span {
       transform: scale(1.02);
     }
+
+    button:disabled {
+      opacity: 0.8;
+      color: var(--soso-disabled-color, #808080);
+      cursor: initial;
+      pointer-events: none;
+    }
+    button:disabled::before {
+      opacity: 0.2;
+    }
     `;
   }
 
   render(): TemplateResult {
     const buttonClass = this.solid ? 'solid' : (this.outlined ? 'outlined' : 'flat');
     return html`
-    <button class="${buttonClass}">
+    <button class="${buttonClass}" ?disabled="${this.disabled}">
       <span>
         <slot></slot>
       </span>
