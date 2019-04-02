@@ -18,12 +18,13 @@ export class SosoRadio extends LitElement implements Checkable {
   @query('button')
   private button?: HTMLButtonElement;
 
-  private controller?: SelectionController;
+  controller?: SelectionController;
 
   constructor() {
     super();
-    const w = window as any;
-    this.controller = SelectionController.getController(this);
+    if (!this.controller) {
+      this.controller = SelectionController.getController(this);
+    }
   }
 
   static get styles(): CSSResult {
