@@ -23,9 +23,7 @@ export class SosoRadio extends LitElement implements Checkable {
   constructor() {
     super();
     const w = window as any;
-    if (!w['ShadyDOM'] || !w['ShadyDOM']['inUse']) {
-      this.controller = SelectionController.getController(this);
-    }
+    this.controller = SelectionController.getController(this);
   }
 
   static get styles(): CSSResult {
@@ -100,13 +98,17 @@ export class SosoRadio extends LitElement implements Checkable {
   }
 
   private toggle() {
+    let fireEvent = false;
     if (!this.checked) {
       this.checked = true;
+      fireEvent = true;
     }
     if (this.controller) {
       this.controller.update(this);
     }
-    fire(this, 'change', { checked: this.checked });
+    if (fireEvent) {
+      fire(this, 'change', { checked: this.checked });
+    }
   }
 
   private focusHandler() {
