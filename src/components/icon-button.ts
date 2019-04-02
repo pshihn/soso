@@ -21,12 +21,23 @@ export class SosoIconButton extends LitElement {
       padding: 10px;
       color: inherit;
       user-select: none;
+      position: relative;
     }
-    button:hover {
-      background: var(--soso-button-hover-color, rgba(0,0,0,0.05));
+    button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: currentColor;
+      opacity: 0;
     }
-    button:focus {
-      background: var(--soso-button-focus-color, rgba(0,0,0,0.1));
+    button:hover::before {
+      opacity: 0.05;
+    }
+    button:focus::before {
+      opacity: 0.1;
     }
     button soso-icon {
       transition: transform 0.3s ease;
