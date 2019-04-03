@@ -81,6 +81,7 @@ export class SosoRadio extends LitElement implements Checkable {
     span {
       display: inline;
       vertical-align: middle;
+      user-select: none;
     }
     `;
   }

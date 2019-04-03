@@ -1,4 +1,4 @@
-import { LitElement, html, TemplateResult, customElement, css, CSSResultArray, query, property } from 'lit-element';
+import { LitElement, html, TemplateResult, customElement, css, CSSResultArray } from 'lit-element';
 import { flex } from '../styles/flex';
 
 @customElement('soso-app-bar')

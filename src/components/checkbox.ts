@@ -67,6 +67,7 @@ export class SosoCheckbox extends LitElement {
     span {
       display: inline;
       vertical-align: middle;
+      user-select: none;
     }
     `;
   }
