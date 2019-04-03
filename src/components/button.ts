@@ -11,6 +11,7 @@ export class SosoButton extends LitElement {
     :host {
       display: inline-block;
       font-size: 14px;
+      text-transform: uppercase;
     }
     button {
       cursor: pointer;
@@ -21,12 +22,12 @@ export class SosoButton extends LitElement {
       user-select: none;
       position: relative;
       font-family: inherit;
-      text-transform: uppercase;
       text-align: center;
       font-size: inherit;
       letter-spacing: 1.25px;
       padding: 1px 8px;
       min-height: 36px;
+      text-transform: inherit;
     }
     button.flat {
       background: none;
