@@ -1,8 +1,8 @@
 import { LitElement, html, TemplateResult, customElement, property, css, CSSResult, query } from 'lit-element';
 import { iconMap } from './icon-map';
-import { fire } from './utils/element-helper';
+import { fire } from './ui-utils/element-helper';
+import { SelectionController, Checkable } from './ui-utils/selection-controller';
 import './icon';
-import { SelectionController, Checkable } from './utils/selection-controller';
 
 const ICON_KEY = 'soso-radio';
 iconMap.define({
