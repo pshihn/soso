@@ -5,6 +5,7 @@ import { flex } from '../styles/flex';
 export class SosoTextInput extends LitElement {
   @property() label = ''
   @property() type = 'text';
+  @property({ type: Boolean }) minimal = false;
 
   @query('#container')
   private container?: HTMLDivElement;
@@ -130,6 +131,36 @@ export class SosoTextInput extends LitElement {
         #container.notched #midOverlay {
           border-top: none;
         }
+
+        #container.minimal #leftOverlay {
+          display: none;
+        }
+        #container.minimal #rightOverlay {
+          display: none;
+        }
+        #container.minimal #midOverlay {
+          border: none;
+        }
+        #container.minimal #overlay {
+          border-radius: 0;
+          border: var(--soso-text-input-border);
+          border-left: none;
+          border-top: none;
+          border-right: none;
+        }
+        #container.minimal input {
+          padding: 12px 8px 14px;
+        }
+        #container.minimal label {
+          transform: translateX(8px);
+        }
+        #container.minimal.notched label {
+          transform: translateX(-4px) translateY(-26px) scale(0.75);
+        }
+        #container.minimal.focussed label {
+          transform: translateX(-4px) translateY(-26px) scale(0.75);
+          opacity: 1;
+        }
       `
     ];
   }
@@ -137,7 +168,7 @@ export class SosoTextInput extends LitElement {
   render(): TemplateResult {
     const midOverlayClass = (this.label || '').trim() ? '' : 'empty';
     return html`
-    <div id="container">
+    <div id="container" class="${this.minimal ? 'minimal' : ''}">
       <input type="${this.type}" @focus="${this.onFocus}" @blur="${this.onBlur}" @input="${this.onInput}">
       <div id="overlay" class="horizontal layout">
         <div id="leftOverlay"></div>
