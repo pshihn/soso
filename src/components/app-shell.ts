@@ -4,6 +4,7 @@ import { flex } from '../styles/flex';
 @customElement('soso-app-shell')
 export class SosoAppShell extends LitElement {
   @property() drawerOpen = false;
+  @property() disableDrawer = false;
 
   static get styles(): CSSResultArray {
     return [
@@ -19,6 +20,9 @@ export class SosoAppShell extends LitElement {
         height: 100vh;
         box-sizing: border-box;
         padding-left: var(--soso-app-drawer-width, 280px);
+      }
+      #shell.nonav {
+        padding-left: 0;
       }
       #toolbarPanel {
         position: fixed;
@@ -62,6 +66,9 @@ export class SosoAppShell extends LitElement {
       #drawerToolbarPanel {
         display: none;
       }
+      #shell.nonav #drawer {
+        display: none;
+      }
 
       @media (max-width: 960px) {
         #shell {
@@ -90,6 +97,9 @@ export class SosoAppShell extends LitElement {
         #toolbarPanel {
           --soso-appbar-nav-display: block;
         }
+        #shell.nonav #toolbarPanel {
+          --soso-appbar-nav-display: none;
+        }
       }
       `
     ];
@@ -97,7 +107,7 @@ export class SosoAppShell extends LitElement {
 
   render(): TemplateResult {
     return html`
-    <div id="shell" class="${this.drawerOpen ? 'open' : ''}">
+    <div id="shell" class="${this.disableDrawer ? 'nonav' : (this.drawerOpen ? 'open' : '')}">
       <main>
         <div class="barSpacer"></div>
         <slot name="main"></slot>
@@ -120,6 +130,12 @@ export class SosoAppShell extends LitElement {
       </div>
     </div>
     `;
+  }
+
+  updated() {
+    if (this.disableDrawer && this.drawerOpen) {
+      this.closeNavMenu();
+    }
   }
 
   private toggleDrawer() {
