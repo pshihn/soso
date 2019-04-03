@@ -1,5 +1,6 @@
 import { LitElement, html, TemplateResult, customElement, css, CSSResultArray } from 'lit-element';
 import { flex } from '../styles/flex';
+import { fire } from './ui-utils/element-helper';
 
 @customElement('soso-app-bar')
 export class SosoAppBar extends LitElement {
@@ -19,6 +20,9 @@ export class SosoAppBar extends LitElement {
         overflow: hidden;
         box-sizing: border-box;
       }
+      #nav {
+        display: var(--soso-appbar-nav-display, block);
+      }
       #center {
         padding: 0 12px;
         overflow: hidden;
@@ -32,6 +36,9 @@ export class SosoAppBar extends LitElement {
         text-overflow: ellipsis;
         overflow: hidden;
       }
+      .hidden {
+        display: none !important;
+      }
       `
     ];
   }
@@ -39,8 +46,11 @@ export class SosoAppBar extends LitElement {
   render(): TemplateResult {
     return html`
     <header id="toolbar" class="horizontal layout center">
-      <section id="nav">
+      <section id="nav" @click="${this.navClick}">
         <slot name="nav"></slot>
+      </section>
+      <section id="leading" class="horizontal layout center">
+        <slot name="leading"></slot>
       </section>
       <section id="center" class="flex">
         <slot name="title"></slot>
@@ -50,5 +60,9 @@ export class SosoAppBar extends LitElement {
       </section>
     </header>
     `;
+  }
+
+  private navClick() {
+    fire(this, 'toggle-nav');
   }
 }
