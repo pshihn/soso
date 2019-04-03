@@ -88,7 +88,7 @@ export class SosoAppShell extends LitElement {
           display: block;
         }
         #toolbarPanel {
-          --soso-appbar-nav-display: unset;
+          --soso-appbar-nav-display: block;
         }
       }
       `
