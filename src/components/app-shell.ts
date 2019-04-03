@@ -6,6 +6,8 @@ export class SosoAppShell extends LitElement {
   @property() drawerOpen = false;
   @property() disableDrawer = false;
 
+  private resizeListener = this.onResize.bind(this);
+
   static get styles(): CSSResultArray {
     return [
       flex,
@@ -113,7 +115,7 @@ export class SosoAppShell extends LitElement {
         <slot name="main"></slot>
       </main>
     
-      <div id="glass" @click="${this.closeNavMenu}"></div>
+      <div id="glass" @click="${this.closeDrawer}"></div>
     
       <div id="drawer">
         <div class="barSpacer"></div>
@@ -132,9 +134,20 @@ export class SosoAppShell extends LitElement {
     `;
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+    window.removeEventListener('resize', this.resizeListener);
+    window.addEventListener('resize', this.resizeListener);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    window.removeEventListener('resize', this.resizeListener);
+  }
+
   updated() {
     if (this.disableDrawer && this.drawerOpen) {
-      this.closeNavMenu();
+      this.closeDrawer();
     }
   }
 
@@ -142,7 +155,13 @@ export class SosoAppShell extends LitElement {
     this.drawerOpen = !this.drawerOpen;
   }
 
-  private closeNavMenu() {
+  private closeDrawer() {
     this.drawerOpen = false;
+  }
+
+  private onResize() {
+    if (this.drawerOpen) {
+      this.closeDrawer();
+    }
   }
 }
