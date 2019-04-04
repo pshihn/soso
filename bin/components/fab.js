@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { LitElement, html, customElement, property, css } from 'lit-element';
 import './icon';
-let SosoIconButton = class SosoIconButton extends LitElement {
+let SosoFab = class SosoFab extends LitElement {
     static get styles() {
         return css `
     :host {
@@ -71,12 +71,12 @@ let SosoIconButton = class SosoIconButton extends LitElement {
 __decorate([
     property({ type: String }),
     __metadata("design:type", String)
-], SosoIconButton.prototype, "icon", void 0);
+], SosoFab.prototype, "icon", void 0);
 __decorate([
     property({ type: String }),
     __metadata("design:type", String)
-], SosoIconButton.prototype, "iconkey", void 0);
-SosoIconButton = __decorate([
+], SosoFab.prototype, "iconkey", void 0);
+SosoFab = __decorate([
     customElement('soso-fab')
-], SosoIconButton);
-export { SosoIconButton };
+], SosoFab);
+export { SosoFab };

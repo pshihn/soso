@@ -2,7 +2,7 @@ import { LitElement, html, TemplateResult, customElement, property, css, CSSResu
 import './icon';
 
 @customElement('soso-fab')
-export class SosoIconButton extends LitElement {
+export class SosoFab extends LitElement {
   @property({ type: String }) icon?: string;
   @property({ type: String }) iconkey?: string;
 
