@@ -7,7 +7,7 @@ export declare class SosoTextInput extends LitElement {
     private input?;
     static readonly styles: CSSResultArray;
     render(): TemplateResult;
-    private onInput();
-    private onFocus();
-    private onBlur();
+    private onInput;
+    private onFocus;
+    private onBlur;
 }

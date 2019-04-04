@@ -8,7 +8,7 @@ export declare class SosoAppShell extends LitElement {
     connectedCallback(): void;
     disconnectedCallback(): void;
     updated(): void;
-    private toggleDrawer();
-    private closeDrawer();
-    private onResize();
+    private toggleDrawer;
+    private closeDrawer;
+    private onResize;
 }

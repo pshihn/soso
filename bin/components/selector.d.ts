@@ -12,8 +12,8 @@ export declare class SosoSelector extends LitElement {
     private current?;
     static readonly styles: CSSResult;
     render(): TemplateResult;
-    private mapPages();
+    private mapPages;
     firstUpdated(): void;
     updated(): void;
-    private getElement();
+    private getElement;
 }

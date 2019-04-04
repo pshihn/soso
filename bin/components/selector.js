@@ -120,7 +120,7 @@ __decorate([
 ], SosoSelector.prototype, "default", void 0);
 __decorate([
     query('slot'),
-    __metadata("design:type", Object)
+    __metadata("design:type", HTMLSlotElement)
 ], SosoSelector.prototype, "slotElement", void 0);
 SosoSelector = __decorate([
     customElement('soso-selector')
