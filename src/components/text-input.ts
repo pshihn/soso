@@ -11,7 +11,7 @@ export class SosoTextInput extends LitElement {
   private container?: HTMLDivElement;
 
   @query('input')
-  private input?: HTMLInputElement;
+  input?: HTMLInputElement;
 
   static get styles(): CSSResultArray {
     return [

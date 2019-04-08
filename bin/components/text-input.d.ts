@@ -4,7 +4,7 @@ export declare class SosoTextInput extends LitElement {
     type: string;
     minimal: boolean;
     private container?;
-    private input?;
+    input?: HTMLInputElement;
     static readonly styles: CSSResultArray;
     render(): TemplateResult;
     private onInput;
