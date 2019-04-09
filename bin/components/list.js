@@ -8,24 +8,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { LitElement, html, customElement, property, css, query } from 'lit-element';
+import { flex } from '../styles/flex';
 let SosoList = class SosoList extends LitElement {
+    constructor() {
+        super(...arguments);
+        this.horizontal = false;
+    }
     static get styles() {
-        return css `
-    :host {
-      display: inline-block;
-      box-sizing: border-box;
-    }
-    ::slotted(*) {
-      display: block;
-    }
-    #container ::slotted(*) {
-      display: block;
-    }
-    `;
+        return [
+            flex,
+            css `
+      :host {
+        display: inline-block;
+        box-sizing: border-box;
+      }
+      `
+        ];
     }
     render() {
         return html `
-    <div id="container" @click="${this.onClick}">
+    <div class="${this.horizontal ? 'horizontal' : 'vertical'} layout" @click="${this.onClick}">
       <slot></slot>
     </div>
     `;
@@ -49,6 +51,10 @@ __decorate([
     property(),
     __metadata("design:type", String)
 ], SosoList.prototype, "selected", void 0);
+__decorate([
+    property({ type: Boolean }),
+    __metadata("design:type", Object)
+], SosoList.prototype, "horizontal", void 0);
 __decorate([
     query('slot'),
     __metadata("design:type", HTMLSlotElement)
