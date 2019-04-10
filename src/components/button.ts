@@ -28,6 +28,8 @@ export class SosoButton extends LitElement {
       padding: 1px 8px;
       min-height: 36px;
       text-transform: inherit;
+      width: 100%;
+      box-sizing: border-box;
     }
     button.flat {
       background: none;
@@ -43,6 +45,7 @@ export class SosoButton extends LitElement {
       border: none;
       padding: 1px 10px;
       transition: box-shadow 0.3s ease;
+      min-height: 40px;
     }
 
     button::before {
