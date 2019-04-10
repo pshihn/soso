@@ -5,9 +5,12 @@ export declare class SosoTextInput extends LitElement {
     minimal: boolean;
     private container?;
     input?: HTMLInputElement;
+    private pendingValue?;
     static readonly styles: CSSResultArray;
     render(): TemplateResult;
+    firstUpdated(): void;
     private onInput;
     private onFocus;
     private onBlur;
+    value: string;
 }

@@ -1,31 +1,30 @@
-import { LitElement, html, TemplateResult, customElement, property, css, CSSResult, query } from 'lit-element';
+import { LitElement, html, TemplateResult, customElement, property, css, query, CSSResultArray } from 'lit-element';
 import { SosoItem } from './item';
+import { flex } from '../styles/flex';
 
 @customElement('soso-list')
 export class SosoList extends LitElement {
   @property() selected?: string;
+  @property({ type: Boolean }) horizontal = false;
 
   @query('slot')
   private slotElement?: HTMLSlotElement;
 
-  static get styles(): CSSResult {
-    return css`
-    :host {
-      display: inline-block;
-      box-sizing: border-box;
-    }
-    ::slotted(*) {
-      display: block;
-    }
-    #container ::slotted(*) {
-      display: block;
-    }
-    `;
+  static get styles(): CSSResultArray {
+    return [
+      flex,
+      css`
+      :host {
+        display: inline-block;
+        box-sizing: border-box;
+      }
+      `
+    ];
   }
 
   render(): TemplateResult {
     return html`
-    <div id="container" @click="${this.onClick}">
+    <div class="${this.horizontal ? 'horizontal' : 'vertical'} layout" @click="${this.onClick}">
       <slot></slot>
     </div>
     `;

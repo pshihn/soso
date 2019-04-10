@@ -111,9 +111,6 @@ let SosoSwitch = class SosoSwitch extends LitElement {
     }
     render() {
         return html `
-    <style>
-    
-    </style>
     <button role="switch" class="${this.checked ? 'checked' : 'unchecked'}" @click="${this.toggle}">
       <div id="track"></div>
       <div id="thumbPanel">

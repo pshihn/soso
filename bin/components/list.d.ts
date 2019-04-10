@@ -1,8 +1,9 @@
-import { LitElement, TemplateResult, CSSResult } from 'lit-element';
+import { LitElement, TemplateResult, CSSResultArray } from 'lit-element';
 export declare class SosoList extends LitElement {
     selected?: string;
+    horizontal: boolean;
     private slotElement?;
-    static readonly styles: CSSResult;
+    static readonly styles: CSSResultArray;
     render(): TemplateResult;
     updated(): void;
     private onClick;
