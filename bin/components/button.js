@@ -66,9 +66,7 @@ let SosoButton = class SosoButton extends LitElement {
       height: 100%;
       background: currentColor;
       opacity: 0;
-    }
-    button:hover::before {
-      opacity: 0.05;
+      pointer-events: none;
     }
     button:focus::before {
       opacity: 0.1;
@@ -76,13 +74,10 @@ let SosoButton = class SosoButton extends LitElement {
     button.solid::before {
       display: none;
     }
-    button.solid:hover {
-      box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12), 0 3px 3px -2px rgba(0, 0, 0, 0.4);
-    }
     button.solid:focus {
       box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.4);
     }
-
+    
     button.solid span {
       color: var(--soso-button-text-color, white);
     }
@@ -102,6 +97,15 @@ let SosoButton = class SosoButton extends LitElement {
     }
     button:disabled::before {
       opacity: 0.2;
+    }
+
+    @media (hover: hover) {
+      button:hover::before {
+        opacity: 0.05;
+      }
+      button.solid:hover {
+        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12), 0 3px 3px -2px rgba(0, 0, 0, 0.4);
+      }
     }
     `;
     }

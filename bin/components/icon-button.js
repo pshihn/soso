@@ -36,9 +36,7 @@ let SosoIconButton = class SosoIconButton extends LitElement {
       height: 100%;
       background: currentColor;
       opacity: 0;
-    }
-    button:hover::before {
-      opacity: 0.05;
+      pointer-events: none;
     }
     button:focus::before {
       opacity: 0.1;
@@ -48,6 +46,12 @@ let SosoIconButton = class SosoIconButton extends LitElement {
     }
     button:active soso-icon {
       transform: scale(1.15);
+    }
+
+    @media (hover: hover) {
+      button:hover::before {
+        opacity: 0.05;
+      }
     }
     `;
     }
