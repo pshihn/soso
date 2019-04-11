@@ -73,9 +73,6 @@ export class SosoSwitch extends LitElement {
       pointer-events: none;
     }
 
-    button:hover #thumbPanel::before {
-      opacity: 0.06;
-    }
     button:focus #thumbPanel::before {
       opacity: 0.08;
     }
@@ -97,6 +94,12 @@ export class SosoSwitch extends LitElement {
     }
     button.checked #thumbPanel::before {
       background-color: var(--soso-highlight-color, #018786);
+    }
+
+    @media (hover: hover) {
+      button:hover #thumbPanel::before {
+        opacity: 0.06;
+      }
     }
     `;
   }
