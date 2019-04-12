@@ -100,6 +100,12 @@ export class SosoSwitch extends LitElement {
       button:hover #thumbPanel::before {
         opacity: 0.06;
       }
+      button:focus #thumbPanel::before {
+        opacity: 0.08;
+      }
+      button:active #thumbPanel::before {
+        opacity: 0.22;
+      }
     }
     `;
   }

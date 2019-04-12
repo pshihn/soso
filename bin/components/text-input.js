@@ -167,6 +167,11 @@ let SosoTextInput = class SosoTextInput extends LitElement {
           #container:hover {
             --soso-border-color: rgba(0,0,0,0.65);
           }
+          #container.focussed {
+            --soso-border-color: var(--soso-text-input-highlight, #000);
+            --soso-text-input-border: 2px solid;
+            color: var(--soso-border-color);
+          }
         }
       `
         ];

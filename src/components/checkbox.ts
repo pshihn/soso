@@ -71,6 +71,12 @@ export class SosoCheckbox extends LitElement {
       button:hover::before {
         opacity: 0.06;
       }
+      button:focus::before {
+        opacity: 0.12;
+      }
+      button:active::before {
+        opacity: 0.22;
+      }
     }
     `;
   }
