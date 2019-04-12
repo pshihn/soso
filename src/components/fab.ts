@@ -26,7 +26,7 @@ export class SosoFab extends LitElement {
       box-shadow: var(--soso-fab-shadow, 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12));
       transition: box-shadow 0.28s ease;
     }
-    button:hover,button:focus {
+    button:focus {
       box-shadow: var(--soso-fab-focus-shadow, 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12));
     }
     button::before {
@@ -40,9 +40,6 @@ export class SosoFab extends LitElement {
       opacity: 0;
       transition: opacity 0.28s ease;
     }
-    button:hover::before {
-      opacity: 0.08;
-    }
     button:focus::before {
       opacity: 0.18;
     }
@@ -54,6 +51,15 @@ export class SosoFab extends LitElement {
     }
     button:active soso-icon {
       transform: scale(1.15);
+    }
+
+    @media (hover: hover) {
+      button:hover::before {
+        opacity: 0.08;
+      }
+      button:hover,button:focus {
+        box-shadow: var(--soso-fab-focus-shadow, 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12));
+      }
     }
     `;
   }

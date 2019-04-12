@@ -59,9 +59,6 @@ let SosoRadio = class SosoRadio extends LitElement {
       opacity: 0;
       transition: opacity 0.3s ease;
     }
-    button:hover::before {
-      opacity: 0.06;
-    }
     button:focus::before {
       opacity: 0.12;
     }
@@ -81,6 +78,12 @@ let SosoRadio = class SosoRadio extends LitElement {
       display: inline;
       vertical-align: middle;
       user-select: none;
+    }
+
+    @media (hover: hover) {
+      button:hover::before {
+        opacity: 0.06;
+      }
     }
     `;
     }
