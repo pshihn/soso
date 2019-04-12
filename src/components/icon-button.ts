@@ -48,6 +48,9 @@ export class SosoIconButton extends LitElement {
       button:hover::before {
         opacity: 0.05;
       }
+      button:focus::before {
+        opacity: 0.1;
+      }
     }
     `;
   }

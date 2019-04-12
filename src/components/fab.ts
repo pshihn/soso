@@ -57,6 +57,12 @@ export class SosoFab extends LitElement {
       button:hover::before {
         opacity: 0.08;
       }
+      button:focus::before {
+        opacity: 0.18;
+      }
+      button:active::before {
+        opacity: 0;
+      }
       button:hover,button:focus {
         box-shadow: var(--soso-fab-focus-shadow, 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12));
       }
