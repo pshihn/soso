@@ -60,9 +60,6 @@ export class SosoRadio extends LitElement implements Checkable {
       opacity: 0;
       transition: opacity 0.3s ease;
     }
-    button:hover::before {
-      opacity: 0.06;
-    }
     button:focus::before {
       opacity: 0.12;
     }
@@ -82,6 +79,12 @@ export class SosoRadio extends LitElement implements Checkable {
       display: inline;
       vertical-align: middle;
       user-select: none;
+    }
+
+    @media (hover: hover) {
+      button:hover::before {
+        opacity: 0.06;
+      }
     }
     `;
   }

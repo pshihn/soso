@@ -113,9 +113,6 @@ export class SosoTextInput extends LitElement {
           transition: transform .15s cubic-bezier(.4,0,.2,1);
           white-space: nowrap;
         }
-        #container:hover {
-          --soso-border-color: rgba(0,0,0,0.65);
-        }
         #container.focussed {
           --soso-border-color: var(--soso-text-input-highlight, #000);
           --soso-text-input-border: 2px solid;
@@ -163,6 +160,12 @@ export class SosoTextInput extends LitElement {
         #container.minimal.focussed label {
           transform: translateX(-4px) translateY(-26px) scale(0.75);
           opacity: 1;
+        }
+
+        @media (hover: hover) {
+          #container:hover {
+            --soso-border-color: rgba(0,0,0,0.65);
+          }
         }
       `
     ];

@@ -47,15 +47,18 @@ export class SosoItem extends LitElement {
       background: currentColor;
       opacity: 0;
     }
-    button:hover::before {
-      opacity: 0.05;
-    }
     button span {
       display: inline-block;
       transition: transform 0.2s ease;
     }
     button:active span {
       transform: scale(1.02);
+    }
+
+    @media (hover: hover) {
+      button:hover::before {
+        opacity: 0.05;
+      }
     }
     `;
   }
