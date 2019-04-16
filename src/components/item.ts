@@ -3,7 +3,6 @@ import { LitElement, html, TemplateResult, customElement, property, css, CSSResu
 @customElement('soso-item')
 export class SosoItem extends LitElement {
   @property() value = '';
-  @property() name = '';
   @property({ type: Boolean }) selected = false;
 
   static get styles(): CSSResult {
