@@ -18,6 +18,7 @@ export class SosoTextArea extends LitElement {
         :host {
           display: inline-block;
           width: 240px;
+          height: 6em;
           color: #000;
           --soso-border-color: rgba(0,0,0,0.24);
           --soso-text-input-highlight: var(--soso-highlight-color, #6200ee);
@@ -56,7 +57,7 @@ export class SosoTextArea extends LitElement {
           display: flex;
           padding: 12px 16px 14px;
           background-color: transparent;
-          min-height: 60px;
+          height: 100%;
         }
         #overlay {
           position: absolute;
