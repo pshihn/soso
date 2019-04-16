@@ -35,8 +35,8 @@ export class SosoTextArea extends LitElement {
           font-family: Roboto, system-ui, sans-serif;
           -moz-osx-font-smoothing: grayscale;
           -webkit-font-smoothing: antialiased;
-          font-size: 1rem;
-          line-height: 1.75rem;
+          font-size: inherit;
+          line-height: 1.5;
           font-weight: 400;
           letter-spacing: .009375em;
           text-decoration: inherit;
