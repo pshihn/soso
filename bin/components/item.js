@@ -12,7 +12,6 @@ let SosoItem = class SosoItem extends LitElement {
     constructor() {
         super(...arguments);
         this.value = '';
-        this.name = '';
         this.selected = false;
     }
     static get styles() {
@@ -84,10 +83,6 @@ __decorate([
     property(),
     __metadata("design:type", Object)
 ], SosoItem.prototype, "value", void 0);
-__decorate([
-    property(),
-    __metadata("design:type", Object)
-], SosoItem.prototype, "name", void 0);
 __decorate([
     property({ type: Boolean }),
     __metadata("design:type", Object)
