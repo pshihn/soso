@@ -60,6 +60,7 @@ let SosoTextArea = class SosoTextArea extends LitElement {
           padding: 12px 16px 14px;
           background-color: transparent;
           height: var(--soso-textarea-height, 6em);
+          min-height: 60px;
         }
         #overlay {
           position: absolute;
