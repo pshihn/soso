@@ -1,6 +1,7 @@
 import { LitElement, html, TemplateResult, customElement, property, css, query, CSSResultArray } from 'lit-element';
 import { SosoItem } from './item';
 import { flex } from '../styles/flex';
+import { fire } from './ui-utils/element-helper';
 
 @customElement('soso-list')
 export class SosoList extends LitElement {
@@ -41,8 +42,9 @@ export class SosoList extends LitElement {
   private onClick(event: Event) {
     event.stopPropagation();
     const value = event.target && (event.target as SosoItem).value;
-    if (value) {
+    if (value && (value !== this.selected)) {
       this.selected = value;
+      fire(this, 'change', { selected: value });
     }
   }
 }

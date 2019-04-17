@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { LitElement, html, customElement, property, css, query } from 'lit-element';
 import { flex } from '../styles/flex';
+import { fire } from './ui-utils/element-helper';
 let SosoList = class SosoList extends LitElement {
     constructor() {
         super(...arguments);
@@ -42,8 +43,9 @@ let SosoList = class SosoList extends LitElement {
     onClick(event) {
         event.stopPropagation();
         const value = event.target && event.target.value;
-        if (value) {
+        if (value && (value !== this.selected)) {
             this.selected = value;
+            fire(this, 'change', { selected: value });
         }
     }
 };
