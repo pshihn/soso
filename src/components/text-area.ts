@@ -11,6 +11,8 @@ export class SosoTextArea extends LitElement {
   @query('textarea')
   private input?: HTMLTextAreaElement;
 
+  private pendingValue?: string;
+
   static get styles(): CSSResultArray {
     return [
       flex,
@@ -159,6 +161,13 @@ export class SosoTextArea extends LitElement {
     `;
   }
 
+  firstUpdated() {
+    if (this.pendingValue) {
+      this.input!.value = this.pendingValue;
+      this.pendingValue = undefined;
+    }
+  }
+
   private onInput() {
     const text = this.input!.value;
     if (text) {
@@ -174,5 +183,22 @@ export class SosoTextArea extends LitElement {
 
   private onBlur() {
     this.container!.classList.remove('focussed');
+  }
+
+  get value(): string {
+    if (this.input) {
+      return this.input.value;
+    } else if (this.pendingValue !== undefined) {
+      return this.pendingValue;
+    }
+    return '';
+  }
+
+  set value(v: string) {
+    if (this.input) {
+      this.input.value = v;
+    } else {
+      this.pendingValue = v;
+    }
   }
 }
