@@ -1,4 +1,4 @@
-import { LitElement, html, TemplateResult, customElement, property, css, CSSResult } from 'lit-element';
+import { LitElement, html, TemplateResult, customElement, property, css, CSSResult, PropertyValues } from 'lit-element';
 
 @customElement('soso-button')
 export class SosoButton extends LitElement {
@@ -115,5 +115,11 @@ export class SosoButton extends LitElement {
         <slot></slot>
       </span>
     </button>`;
+  }
+
+  updated(changed: PropertyValues) {
+    if (changed.has('disabled')) {
+      this.style.pointerEvents = this.disabled ? 'none' : null;
+    }
   }
 }

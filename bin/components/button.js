@@ -124,6 +124,11 @@ let SosoButton = class SosoButton extends LitElement {
       </span>
     </button>`;
     }
+    updated(changed) {
+        if (changed.has('disabled')) {
+            this.style.pointerEvents = this.disabled ? 'none' : null;
+        }
+    }
 };
 __decorate([
     property({ type: Boolean }),
