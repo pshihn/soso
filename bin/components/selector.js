@@ -18,7 +18,7 @@ let SosoSelector = class SosoSelector extends LitElement {
     static get styles() {
         return css `
     :host {
-      display: block;
+      display: contents;
     }
 
     .hidden {
