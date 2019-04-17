@@ -169,15 +169,13 @@ export class SosoTextArea extends LitElement {
     }
   }
 
-  private onInput(event: Event) {
+  private onInput() {
     const text = this.input!.value;
     if (text) {
       this.container!.classList.add('notched');
     } else {
       this.container!.classList.remove('notched');
     }
-    event.stopPropagation();
-    fire(this, 'input');
   }
 
   private onFocus() {
@@ -200,6 +198,7 @@ export class SosoTextArea extends LitElement {
   set value(v: string) {
     if (this.input) {
       this.input.value = v;
+      this.onInput();
     } else {
       this.pendingValue = v;
     }
