@@ -1,5 +1,6 @@
 import { LitElement, html, TemplateResult, customElement, css, CSSResultArray, query, property } from 'lit-element';
 import { flex } from '../styles/flex';
+import { fire } from './ui-utils/element-helper';
 
 @customElement('soso-text-area')
 export class SosoTextArea extends LitElement {
@@ -168,13 +169,15 @@ export class SosoTextArea extends LitElement {
     }
   }
 
-  private onInput() {
+  private onInput(event: Event) {
     const text = this.input!.value;
     if (text) {
       this.container!.classList.add('notched');
     } else {
       this.container!.classList.remove('notched');
     }
+    event.stopPropagation();
+    fire(this, 'input');
   }
 
   private onFocus() {
