@@ -160,6 +160,12 @@ let SosoTextArea = class SosoTextArea extends LitElement {
     </div>
     `;
     }
+    firstUpdated() {
+        if (this.pendingValue) {
+            this.input.value = this.pendingValue;
+            this.pendingValue = undefined;
+        }
+    }
     onInput() {
         const text = this.input.value;
         if (text) {
@@ -174,6 +180,23 @@ let SosoTextArea = class SosoTextArea extends LitElement {
     }
     onBlur() {
         this.container.classList.remove('focussed');
+    }
+    get value() {
+        if (this.input) {
+            return this.input.value;
+        }
+        else if (this.pendingValue !== undefined) {
+            return this.pendingValue;
+        }
+        return '';
+    }
+    set value(v) {
+        if (this.input) {
+            this.input.value = v;
+        }
+        else {
+            this.pendingValue = v;
+        }
     }
 };
 __decorate([
