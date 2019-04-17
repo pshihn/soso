@@ -196,6 +196,7 @@ let SosoTextInput = class SosoTextInput extends LitElement {
         if (this.pendingValue) {
             this.input.value = this.pendingValue;
             this.pendingValue = undefined;
+            this.onInput();
         }
     }
     onInput() {
