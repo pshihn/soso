@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { LitElement, html, customElement, css, query, property } from 'lit-element';
 import { flex } from '../styles/flex';
+import { fire } from './ui-utils/element-helper';
 let SosoTextArea = class SosoTextArea extends LitElement {
     constructor() {
         super(...arguments);
@@ -166,7 +167,7 @@ let SosoTextArea = class SosoTextArea extends LitElement {
             this.pendingValue = undefined;
         }
     }
-    onInput() {
+    onInput(event) {
         const text = this.input.value;
         if (text) {
             this.container.classList.add('notched');
@@ -174,6 +175,8 @@ let SosoTextArea = class SosoTextArea extends LitElement {
         else {
             this.container.classList.remove('notched');
         }
+        event.stopPropagation();
+        fire(this, 'input');
     }
     onFocus() {
         this.container.classList.add('focussed');
