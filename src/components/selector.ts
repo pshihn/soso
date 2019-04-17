@@ -20,7 +20,7 @@ export class SosoSelector extends LitElement {
   static get styles(): CSSResult {
     return css`
     :host {
-      display: block;
+      display: contents;
     }
 
     .hidden {
