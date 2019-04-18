@@ -1,6 +1,5 @@
 import { LitElement, html, TemplateResult, customElement, css, CSSResultArray, query, property } from 'lit-element';
 import { flex } from '../styles/flex';
-import { fire } from './ui-utils/element-helper';
 
 @customElement('soso-text-area')
 export class SosoTextArea extends LitElement {
@@ -35,7 +34,7 @@ export class SosoTextArea extends LitElement {
           box-sizing: border-box;
         }
         textarea {
-          font-family: Roboto, system-ui, sans-serif;
+          font-family: inherit;
           -moz-osx-font-smoothing: grayscale;
           -webkit-font-smoothing: antialiased;
           font-size: inherit;
