@@ -46,6 +46,8 @@ let SosoTextArea = class SosoTextArea extends LitElement {
           text-transform: inherit;
           box-sizing: border-box;
           min-width: 100%;
+          max-width: 100%;
+          width: 100% !important;
           border: none;
           border-radius: 0;
           background: none;
