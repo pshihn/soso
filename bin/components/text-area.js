@@ -35,7 +35,7 @@ let SosoTextArea = class SosoTextArea extends LitElement {
           box-sizing: border-box;
         }
         textarea {
-          font-family: Roboto, system-ui, sans-serif;
+          font-family: inherit;
           -moz-osx-font-smoothing: grayscale;
           -webkit-font-smoothing: antialiased;
           font-size: inherit;
