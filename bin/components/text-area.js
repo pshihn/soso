@@ -59,7 +59,8 @@ let SosoTextArea = class SosoTextArea extends LitElement {
           align-self: flex-start;
           color: var(--soso-input-color, rgba(0,0,0,.87));
           display: flex;
-          padding: 12px 16px 14px;
+          padding: 0 16px 14px;
+          margin: 8px 0 0;
           background-color: transparent;
           height: var(--soso-textarea-height, 6em);
           min-height: 60px;

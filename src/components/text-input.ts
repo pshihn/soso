@@ -1,6 +1,5 @@
 import { LitElement, html, TemplateResult, customElement, css, CSSResultArray, query, property } from 'lit-element';
 import { flex } from '../styles/flex';
-import { fire } from './ui-utils/element-helper';
 
 @customElement('soso-text-input')
 export class SosoTextInput extends LitElement {
