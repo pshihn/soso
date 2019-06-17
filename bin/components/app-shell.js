@@ -72,6 +72,7 @@ let SosoAppShell = class SosoAppShell extends LitElement {
         overflow: hidden;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+        background: var(--soso-drawer-overlay-bg, white);
       }
       #drawerToolbarPanel {
         display: none;

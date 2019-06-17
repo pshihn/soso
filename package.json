@@ -1,6 +1,6 @@
 {
   "name": "soso",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Lightweight set of custom elements used in web dev",
   "main": "index.js",
   "scripts": {
