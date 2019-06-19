@@ -81,7 +81,7 @@ export class SosoChip extends LitElement {
 
     soso-icon {
       padding: 5px 0 5px 5px;
-      color: #018786;
+      color: var(--soso-highlight-color, #018786);
       cursor: pointer;
     }
 
