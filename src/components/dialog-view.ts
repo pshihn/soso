@@ -23,7 +23,8 @@ export class SosoDialogView extends LitElement {
       background: var(--soso-dialog-title-bg, #f5f5f5);
       color: var(--soso-dialog-title-color, #000000);
       border-bottom: var(--soso-dialog-title-border, none);
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
+      font-size: 1.15em;
     }
     #content {
       padding: 0 16px;
