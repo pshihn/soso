@@ -28,7 +28,7 @@ export class SosoDialogContainer extends LitElement {
       #contentPanel {
         opacity: 0;
         transform: scale(0.8);
-        transition: opacity 0.5s ease-out, transform 0.3s ease;
+        transition: opacity 0.5s ease, transform 0.3s ease;
       }
       #glass {
         position: absolute;
@@ -38,7 +38,7 @@ export class SosoDialogContainer extends LitElement {
         bottom: 0;
         background: var(--soso-dialog-glass-color, rgba(0,0,0,0.36));
         opacity: 0;
-        transition: opacity 0.5s ease-out;
+        transition: opacity 0.5s ease;
       }
       #main {
         position: absolute;
