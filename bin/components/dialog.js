@@ -47,7 +47,7 @@ let SosoDialogContainer = class SosoDialogContainer extends LitElement {
         bottom: 0;
         background: var(--soso-dialog-glass-color, rgba(0,0,0,0.36));
         opacity: 0;
-        transition: opacity 0.5s ease;
+        transition: opacity 0.3s ease;
       }
       #main {
         position: absolute;
