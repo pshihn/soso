@@ -28,7 +28,7 @@ export class SosoDialogContainer extends LitElement {
       #contentPanel {
         opacity: 0;
         transform: scale(0.8);
-        transition: opacity 0.5s ease, transform 0.3s ease;
+        transition: opacity 0.3s ease, transform 0.5s ease;
       }
       #glass {
         position: absolute;
