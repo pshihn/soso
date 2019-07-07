@@ -37,7 +37,7 @@ let SosoDialogContainer = class SosoDialogContainer extends LitElement {
       #contentPanel {
         opacity: 0;
         transform: scale(0.8);
-        transition: opacity 0.5s ease-out, transform 0.5s ease;
+        transition: opacity 0.5s ease-out, transform 0.3s ease;
       }
       #glass {
         position: absolute;
@@ -60,7 +60,7 @@ let SosoDialogContainer = class SosoDialogContainer extends LitElement {
       #container.showing {
         pointer-events: auto;
       }
-      #container.showing #glassPanel {
+      #container.showing #glass {
         opacity: 1;
       }
       #container.showing #contentPanel {
