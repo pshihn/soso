@@ -119,14 +119,14 @@ export class SosoTextInput extends LitElement {
           color: var(--soso-border-color);
         }
         #container.focussed label {
-          transform: translateX(-4px) translateY(-26px) scale(0.75);
+          transform: translateX(-0.5em) translateY(-26px) scale(0.75);
           opacity: 1;
         }
         #container.focussed #midOverlay {
           border-top: none;
         }
         #container.notched label {
-          transform: translateX(-4px) translateY(-26px) scale(0.75);
+          transform: translateX(-0.5em) translateY(-26px) scale(0.75);
         }
         #container.notched #midOverlay {
           border-top: none;
@@ -155,10 +155,10 @@ export class SosoTextInput extends LitElement {
           transform: translateX(8px);
         }
         #container.minimal.notched label {
-          transform: translateX(-4px) translateY(-26px) scale(0.75);
+          transform: translateX(-0.5em) translateY(-26px) scale(0.75);
         }
         #container.minimal.focussed label {
-          transform: translateX(-4px) translateY(-26px) scale(0.75);
+          transform: translateX(-0.5em) translateY(-26px) scale(0.75);
           opacity: 1;
         }
 
