@@ -27,7 +27,7 @@ export class SosoDialogView extends LitElement {
       font-size: 1.15em;
     }
     #content {
-      padding: 0 16px;
+      padding: 16px;
     }
     #footer {
       padding: 16px;
