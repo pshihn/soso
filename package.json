@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/pshihn/soso#readme",
   "devDependencies": {
-    "lit-element": "^2.1.0",
-    "typescript": "^3.4.1"
+    "lit-element": "^2.2.0",
+    "typescript": "^3.5.2"
   }
 }

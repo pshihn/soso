@@ -86,7 +86,7 @@ export class SosoButton extends LitElement {
       cursor: initial;
       pointer-events: none;
     }
-    button:disabled::before {
+    button.solid:disabled::before {
       opacity: 0.2;
     }
 
