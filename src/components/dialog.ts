@@ -23,7 +23,7 @@ export class SosoDialogContainer extends LitElement {
         z-index: var(--soso-dialog-z-index, 10);
       }
       #contentCell {
-        padding: 5px;
+        padding: var(--soso-dialog-content-padding, 5px);
       }
       #contentPanel {
         opacity: 0;
