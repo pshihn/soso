@@ -34,6 +34,7 @@ let SosoDialogView = class SosoDialogView extends LitElement {
       border-bottom: var(--soso-dialog-title-border, none);
       letter-spacing: 0.8px;
       font-size: 1.15em;
+      display: var(--soso-dialog-title-display, block);
     }
     #content {
       padding: 16px;
