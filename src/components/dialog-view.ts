@@ -8,7 +8,7 @@ export class SosoDialogView extends LitElement {
     return css`
     :host {
       display: block;
-      max-width: 400px;
+      max-width: 500px;
       margin: 0 auto;
       box-sizing: border-box;
       background: white;
