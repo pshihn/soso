@@ -31,11 +31,11 @@ export class SosoIconButton extends LitElement {
       width: 100%;
       height: 100%;
       background: currentColor;
-      opacity: 0;
+      opacity: var(--soso-icon-button-before-opacity, 0);
       pointer-events: none;
     }
     button:focus::before {
-      opacity: 0.1;
+      opacity: var(--soso-icon-button-before-opacity, 0.1);
     }
     button soso-icon {
       transition: transform 0.3s ease;
@@ -46,10 +46,10 @@ export class SosoIconButton extends LitElement {
 
     @media (hover: hover) {
       button:hover::before {
-        opacity: 0.05;
+        opacity: var(--soso-icon-button-before-opacity, 0.05);
       }
       button:focus::before {
-        opacity: 0.1;
+        opacity: var(--soso-icon-button-before-opacity, 0.1);
       }
     }
     `;
