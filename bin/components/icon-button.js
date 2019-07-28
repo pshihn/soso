@@ -22,7 +22,7 @@ let SosoIconButton = class SosoIconButton extends LitElement {
       border: none;
       border-radius: 50%;
       overflow: hidden;
-      padding: 10px;
+      padding: var(--soso-icon-button-padding, 10px);
       color: inherit;
       user-select: none;
       position: relative;
