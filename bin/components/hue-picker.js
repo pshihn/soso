@@ -24,6 +24,7 @@ let SosoHuePicker = class SosoHuePicker extends LitElement {
         position: relative;
         pointer-events: none;
         background-image: linear-gradient(to right, #fff, #000);
+        box-shadow: var(--soso-bar-shadow, none);
       }
       #gradient {
         position: absolute;
