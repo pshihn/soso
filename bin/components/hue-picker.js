@@ -72,7 +72,8 @@ let SosoHuePicker = class SosoHuePicker extends LitElement {
         border: 1px solid #fff;
         height: 22px;
         width: 22px;
-        margin-top: -5px;
+        margin: 0;
+        transform: translateY(-5px);
       }
 
       input[type=range]::-webkit-slider-thumb {
@@ -84,7 +85,8 @@ let SosoHuePicker = class SosoHuePicker extends LitElement {
         border: 1px solid #fff;
         height: 22px;
         width: 22px;
-        margin-top: -5px;
+        margin: 0;
+        transform: translateY(-5px);
       }
     `;
     }
