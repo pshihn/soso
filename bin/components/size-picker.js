@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { LitElement, html, customElement, css, query } from 'lit-element';
 import { fire } from './ui-utils/element-helper';
-let SosoHuePicker = class SosoHuePicker extends LitElement {
+let SosoSizePicker = class SosoSizePicker extends LitElement {
     static get styles() {
         return css `
       :host {
@@ -19,22 +19,18 @@ let SosoHuePicker = class SosoHuePicker extends LitElement {
       #container {
         width: 100%;
         box-sizing: border-box;
-        height: 12px;
-        border-radius: 12px;
+        height: 26px;
         position: relative;
         pointer-events: none;
-        background-image: linear-gradient(to right, #fff, #000);
         box-shadow: var(--soso-bar-shadow, none);
       }
       #gradient {
         position: absolute;
         top: 0;
         bottom: 0;
-        left: 1.35%;
-        right: 1.35%;
+        left: 0;
+        right: 0;
         pointer-events: none;
-        border-radius: 12px;
-        background-image: linear-gradient(to right, hsl(0, 97%, 59%), hsl(60, 97%, 59%), hsl(120, 97%, 59%), hsl(180, 97%, 59%), hsl(240, 97%, 59%), hsl(300, 97%, 59%), hsl(0, 97%, 59%));
       }
 
       input[type=range] {
@@ -66,88 +62,73 @@ let SosoHuePicker = class SosoHuePicker extends LitElement {
       
       input[type=range]::-moz-range-thumb {
         border-radius: 50px;
-        background: var(--x-soso-thumb-color, #ffffff);
+        background: #000;
         cursor: pointer;
-        box-shadow: var(--soso-thumb-shadow, 0 0 4px -1px rgba(0,0,0,0.5));
+        box-shadow: var(--soso-thumb-shadow, 0 0 7px 0px rgba(0,0,0,0.5));
         border: 2px solid #fff;
         margin: 0;
         height: 20px;
         width: 20px;
-        transform: translateY(-2px);
+        transform: translateY(6px);
       }
 
       input[type=range]::-webkit-slider-thumb {
         -webkit-appearance: none;
         border-radius: 50px;
-        background: var(--x-soso-thumb-color, #ffffff);
+        background: #000;
         cursor: pointer;
-        box-shadow: var(--soso-thumb-shadow, 0 0 4px -1px rgba(0,0,0,0.5));
+        box-shadow: var(--soso-thumb-shadow, 0 0 7px 0px rgba(0,0,0,0.5));
         border: 2px solid #fff;
         height: 22px;
         width: 22px;
         margin: 0;
-        transform: translateY(-5px);
+        transform: translateY(2px);
+      }
+
+      svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      polygon {
+        fill: var(--soso-bar-color, #aaa);
       }
     `;
     }
     render() {
         return html `
     <div id="container">
-      <div id="gradient"></div>
-      <input id="range" type="range" min="-5" max="365" value="-5" @input="${this.onInput}">
+      <div id="gradient">
+        <svg viewBox="0 0 180 26" preserveAspectRatio="xMidYMid meet" focusable="false">
+          <polygon points="0,13 180,0 180,26"></polygon>
+        </svg>
+      </div>
+      <input id="range" type="range" min="0" max="1" value="0" step="0.01" @input="${this.onInput}">
     </div>
     `;
     }
     onInput(e) {
         e.stopPropagation();
         const value = +this.range.value;
-        this.updateThumbColor();
-        fire(this, 'change', {
-            value,
-            isWhite: value < 0,
-            isBlack: value > 360
-        });
+        fire(this, 'change', { value });
     }
     get value() {
         if (this.range) {
             return +this.range.value;
         }
-        return -5;
+        return 0;
     }
     set value(v) {
         if (this.range) {
-            if (v < 0) {
-                this.range.value = '-5';
-            }
-            else if (v > 360) {
-                this.range.value = '360';
-            }
-            else {
-                this.range.value = `${v}`;
-            }
-            this.updateThumbColor();
-        }
-    }
-    updateThumbColor() {
-        if (this.range) {
-            const value = +this.range.value;
-            if (value < 0) {
-                this.style.setProperty('--x-soso-thumb-color', '#fff');
-            }
-            else if (value > 360) {
-                this.style.setProperty('--x-soso-thumb-color', '#000');
-            }
-            else {
-                this.style.setProperty('--x-soso-thumb-color', `hsl(${value}, 97%, 59%)`);
-            }
+            this.range.value = `${Math.max(0, Math.min(1, v))}`;
         }
     }
 };
 __decorate([
     query('#range'),
     __metadata("design:type", HTMLInputElement)
-], SosoHuePicker.prototype, "range", void 0);
-SosoHuePicker = __decorate([
-    customElement('soso-hue-picker')
-], SosoHuePicker);
-export { SosoHuePicker };
+], SosoSizePicker.prototype, "range", void 0);
+SosoSizePicker = __decorate([
+    customElement('soso-size-picker')
+], SosoSizePicker);
+export { SosoSizePicker };
