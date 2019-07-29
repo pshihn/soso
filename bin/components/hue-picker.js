@@ -68,7 +68,7 @@ let SosoHuePicker = class SosoHuePicker extends LitElement {
         border-radius: 50px;
         background: var(--x-soso-thumb-color, #ffffff);
         cursor: pointer;
-        box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+        box-shadow: var(--soso-thumb-shadow, 0 0 4px -1px rgba(0,0,0,0.5));
         border: 1px solid #fff;
         height: 22px;
         width: 22px;
@@ -80,7 +80,7 @@ let SosoHuePicker = class SosoHuePicker extends LitElement {
         border-radius: 50px;
         background: var(--x-soso-thumb-color, #ffffff);
         cursor: pointer;
-        box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+        box-shadow: var(--soso-thumb-shadow, 0 0 4px -1px rgba(0,0,0,0.5));
         border: 1px solid #fff;
         height: 22px;
         width: 22px;
