@@ -65,7 +65,7 @@ export class SosoHuePicker extends LitElement {
         background: var(--x-soso-thumb-color, #ffffff);
         cursor: pointer;
         box-shadow: var(--soso-thumb-shadow, 0 0 4px -1px rgba(0,0,0,0.5));
-        border: 1px solid #fff;
+        border: 2px solid #fff;
         height: 22px;
         width: 22px;
         margin: 0;
@@ -78,7 +78,7 @@ export class SosoHuePicker extends LitElement {
         background: var(--x-soso-thumb-color, #ffffff);
         cursor: pointer;
         box-shadow: var(--soso-thumb-shadow, 0 0 4px -1px rgba(0,0,0,0.5));
-        border: 1px solid #fff;
+        border: 2px solid #fff;
         height: 22px;
         width: 22px;
         margin: 0;
