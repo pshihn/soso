@@ -58,7 +58,7 @@ export class SosoSizePicker extends LitElement {
       
       input[type=range]::-moz-range-thumb {
         border-radius: 50px;
-        background: #000;
+        background: var(--soso-thumb-color, #000);
         cursor: pointer;
         box-shadow: var(--soso-thumb-shadow, 0 0 7px 0px rgba(0,0,0,0.5));
         border: 2px solid #fff;
@@ -71,7 +71,7 @@ export class SosoSizePicker extends LitElement {
       input[type=range]::-webkit-slider-thumb {
         -webkit-appearance: none;
         border-radius: 50px;
-        background: #000;
+        background: var(--soso-thumb-color, #000);
         cursor: pointer;
         box-shadow: var(--soso-thumb-shadow, 0 0 7px 0px rgba(0,0,0,0.5));
         border: 2px solid #fff;
