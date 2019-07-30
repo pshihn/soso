@@ -10,6 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { LitElement, html, customElement, property, css } from 'lit-element';
 import './icon';
 let SosoIconButton = class SosoIconButton extends LitElement {
+    constructor() {
+        super(...arguments);
+        this.disabled = false;
+    }
     static get styles() {
         return css `
     :host {
@@ -47,6 +51,12 @@ let SosoIconButton = class SosoIconButton extends LitElement {
     button:active soso-icon {
       transform: scale(1.15);
     }
+    button:disabled {
+      opacity: 0.8;
+      color: var(--soso-disabled-color, #808080);
+      cursor: initial;
+      pointer-events: none;
+    }
 
     @media (hover: hover) {
       button:hover::before {
@@ -60,9 +70,14 @@ let SosoIconButton = class SosoIconButton extends LitElement {
     }
     render() {
         return html `
-    <button>
+    <button ?disabled="${this.disabled}">
       <soso-icon .icon="${this.icon}" .iconkey="${this.iconkey}"></soso-icon>
     </button>`;
+    }
+    updated(changed) {
+        if (changed.has('disabled')) {
+            this.style.pointerEvents = this.disabled ? 'none' : null;
+        }
     }
 };
 __decorate([
@@ -73,6 +88,10 @@ __decorate([
     property({ type: String }),
     __metadata("design:type", String)
 ], SosoIconButton.prototype, "iconkey", void 0);
+__decorate([
+    property({ type: Boolean }),
+    __metadata("design:type", Object)
+], SosoIconButton.prototype, "disabled", void 0);
 SosoIconButton = __decorate([
     customElement('soso-icon-button')
 ], SosoIconButton);
