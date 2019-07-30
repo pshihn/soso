@@ -1,10 +1,11 @@
-import { LitElement, html, TemplateResult, customElement, property, css, CSSResult } from 'lit-element';
+import { LitElement, html, TemplateResult, customElement, property, css, CSSResult, PropertyValues } from 'lit-element';
 import './icon';
 
 @customElement('soso-icon-button')
 export class SosoIconButton extends LitElement {
   @property({ type: String }) icon?: string;
   @property({ type: String }) iconkey?: string;
+  @property({ type: Boolean }) disabled = false;
 
   static get styles(): CSSResult {
     return css`
@@ -43,6 +44,12 @@ export class SosoIconButton extends LitElement {
     button:active soso-icon {
       transform: scale(1.15);
     }
+    button:disabled {
+      opacity: 0.8;
+      color: var(--soso-disabled-color, #808080);
+      cursor: initial;
+      pointer-events: none;
+    }
 
     @media (hover: hover) {
       button:hover::before {
@@ -57,8 +64,14 @@ export class SosoIconButton extends LitElement {
 
   render(): TemplateResult {
     return html`
-    <button>
+    <button ?disabled="${this.disabled}">
       <soso-icon .icon="${this.icon}" .iconkey="${this.iconkey}"></soso-icon>
     </button>`;
+  }
+
+  updated(changed: PropertyValues) {
+    if (changed.has('disabled')) {
+      this.style.pointerEvents = this.disabled ? 'none' : null;
+    }
   }
 }
