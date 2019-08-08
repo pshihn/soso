@@ -69,12 +69,16 @@ export class SosoGroup extends LitElement {
           position: absolute;
           left: 0;
           top: 17px;
-          opacity: 0.6;
           font-size: 1rem;
           line-height: 1;
           transform: translateX(-4px) translateY(-26px) scale(0.75);
           transition: transform .15s cubic-bezier(.4,0,.2,1);
           white-space: nowrap;
+        }
+        #container.focussed {
+          --soso-border-color: var(--soso-text-input-highlight, #000);
+          --soso-text-input-border: 2px solid;
+          color: var(--soso-border-color);
         }
 
         @media (hover: hover) {
@@ -94,7 +98,7 @@ export class SosoGroup extends LitElement {
   render(): TemplateResult {
     const midOverlayClass = (this.label || '').trim() ? '' : 'empty';
     return html`
-    <div id="container" tabindex="0" @focus="${this.onFocus}" @click="${this.onFocus}" @blur="${this.onBlur}">
+    <div id="container" tabindex="0" @focus="${this.onFocus}" @blur="${this.onBlur}">
       <slot></slot>
       <div id="overlay" class="horizontal layout">
         <div id="leftOverlay"></div>
