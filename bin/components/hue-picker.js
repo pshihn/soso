@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { LitElement, html, customElement, css, query } from 'lit-element';
-import { fire } from './ui-utils/element-helper';
+import { fire } from '../utils/ui-utils';
 let SosoHuePicker = class SosoHuePicker extends LitElement {
     static get styles() {
         return css `

@@ -1,6 +1,6 @@
 import { LitElement, html, TemplateResult, customElement, property, css, CSSResult, query } from 'lit-element';
 import { iconMap } from './icon-map';
-import { fire } from './ui-utils/element-helper';
+import { fire } from '../utils/ui-utils';
 import { SelectionController, Checkable } from './ui-utils/selection-controller';
 import './icon';
 

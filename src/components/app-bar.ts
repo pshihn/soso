@@ -1,6 +1,6 @@
 import { LitElement, html, TemplateResult, customElement, css, CSSResultArray } from 'lit-element';
 import { flex } from '../styles/flex';
-import { fire } from './ui-utils/element-helper';
+import { fire } from '../utils/ui-utils';
 
 @customElement('soso-app-bar')
 export class SosoAppBar extends LitElement {

@@ -1,5 +1,5 @@
 import { LitElement, html, TemplateResult, customElement, property, css, CSSResult } from 'lit-element';
-import { fire } from './ui-utils/element-helper';
+import { fire } from '../utils/ui-utils';
 import { iconMap } from './icon-map';
 import './icon';
 

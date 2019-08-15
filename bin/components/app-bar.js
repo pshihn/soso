@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { LitElement, html, customElement, css } from 'lit-element';
 import { flex } from '../styles/flex';
-import { fire } from './ui-utils/element-helper';
+import { fire } from '../utils/ui-utils';
 let SosoAppBar = class SosoAppBar extends LitElement {
     static get styles() {
         return [

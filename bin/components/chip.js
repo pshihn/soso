@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { LitElement, html, customElement, property, css } from 'lit-element';
-import { fire } from './ui-utils/element-helper';
+import { fire } from '../utils/ui-utils';
 import { iconMap } from './icon-map';
 import './icon';
 const ICON_KEY = 'soso-chip';
