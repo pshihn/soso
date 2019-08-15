@@ -1,4 +1,5 @@
 import { LitElement, html, TemplateResult, customElement, property, css, CSSResult, query } from 'lit-element';
+import { fire } from '../utils/ui-utils';
 
 export interface PageElement extends HTMLElement {
   onActivate(): void;
@@ -93,6 +94,9 @@ export class SosoSelector extends LitElement {
       try {
         this.current.onActivate();
       } catch (err) { console.error(err); }
+    }
+    if (this.current) {
+      fire(this, 'change', { node: this.current });
     }
   }
 
