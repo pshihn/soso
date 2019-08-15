@@ -1,7 +1,7 @@
 import { LitElement, html, TemplateResult, customElement, property, css, query, CSSResultArray } from 'lit-element';
 import { SosoItem } from './item';
 import { flex } from '../styles/flex';
-import { fire } from './ui-utils/element-helper';
+import { fire } from '../utils/ui-utils';
 
 @customElement('soso-list')
 export class SosoList extends LitElement {

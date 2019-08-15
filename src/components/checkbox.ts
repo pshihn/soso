@@ -1,6 +1,6 @@
 import { LitElement, html, TemplateResult, customElement, property, css, CSSResult } from 'lit-element';
 import { iconMap } from './icon-map';
-import { fire } from './ui-utils/element-helper';
+import { fire } from '../utils/ui-utils';
 import './icon';
 
 const ICON_KEY = 'soso-checkbox';

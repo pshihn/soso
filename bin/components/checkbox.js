@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { LitElement, html, customElement, property, css } from 'lit-element';
 import { iconMap } from './icon-map';
-import { fire } from './ui-utils/element-helper';
+import { fire } from '../utils/ui-utils';
 import './icon';
 const ICON_KEY = 'soso-checkbox';
 iconMap.define({

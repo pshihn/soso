@@ -1,5 +1,5 @@
 import { LitElement, html, TemplateResult, customElement, css, CSSResult, query } from 'lit-element';
-import { fire } from './ui-utils/element-helper';
+import { fire } from '../utils/ui-utils';
 
 @customElement('soso-size-picker')
 export class SosoSizePicker extends LitElement {

@@ -1,5 +1,5 @@
 import { LitElement, html, TemplateResult, customElement, css, CSSResult, query } from 'lit-element';
-import { fire } from './ui-utils/element-helper';
+import { fire } from '../utils/ui-utils';
 
 @customElement('soso-hue-picker')
 export class SosoHuePicker extends LitElement {

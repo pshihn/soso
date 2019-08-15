@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { LitElement, html, customElement, property, css, query } from 'lit-element';
 import { flex } from '../styles/flex';
-import { fire } from './ui-utils/element-helper';
+import { fire } from '../utils/ui-utils';
 let SosoList = class SosoList extends LitElement {
     constructor() {
         super(...arguments);
