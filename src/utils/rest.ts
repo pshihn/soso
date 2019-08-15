@@ -48,3 +48,39 @@ export async function del(url: string, includeCredentials: boolean = true): Prom
   }
   return response;
 }
+
+export function beacon(url: string, data: any): boolean {
+  const payload = (data && (typeof data !== 'string')) ? JSON.stringify(data) : (data as string || '');
+  if (window.navigator.sendBeacon) {
+    return window.navigator.sendBeacon(url, payload);
+  }
+  return false;
+}
+
+export async function postFile<T>(url: string, formData: FormData): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const request = new XMLHttpRequest();
+    request.withCredentials = true;
+    request.open('POST', url);
+    request.onload = () => {
+      const status = request.status;
+      if (status === 0 || status >= 400) {
+        if (request.responseText) {
+          reject({ status, message: request.responseText });;
+        } else {
+          reject({ status, message: 'Upload request failed with code: ' + status });
+        }
+      } else {
+        if (request.responseText) {
+          resolve(JSON.parse(request.responseText));
+        } else {
+          resolve({} as any);
+        }
+      }
+    };
+    request.onerror = (err) => {
+      reject({ status: 0, message: `There was a network error on file upload: ${err}` });
+    };
+    request.send(formData);
+  });
+}
