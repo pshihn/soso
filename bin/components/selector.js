@@ -97,7 +97,7 @@ let SosoSelector = class SosoSelector extends LitElement {
             }
         }
         if (this.current) {
-            fire(this, 'change', { node: this.current });
+            fire(this, 'node-select', { node: this.current }, false);
         }
     }
     getElement() {
