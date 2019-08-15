@@ -8,6 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { LitElement, html, customElement, property, css, query } from 'lit-element';
+import { fire } from '../utils/ui-utils';
 let SosoSelector = class SosoSelector extends LitElement {
     constructor() {
         super(...arguments);
@@ -94,6 +95,9 @@ let SosoSelector = class SosoSelector extends LitElement {
             catch (err) {
                 console.error(err);
             }
+        }
+        if (this.current) {
+            fire(this, 'node-select', { node: this.current }, false);
         }
     }
     getElement() {
