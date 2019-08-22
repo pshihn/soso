@@ -11,8 +11,20 @@ export function createUrl(path, baseUrl = '', params) {
     }
     return url.toString();
 }
-export async function get(url, includeCredentials = true) {
+function appendToHeaders(header, params) {
+    if (params) {
+        for (const name in params) {
+            header.append(name, params[name]);
+        }
+    }
+}
+export async function get(url, includeCredentials = true, headerParams) {
     const init = { credentials: includeCredentials ? 'include' : 'same-origin' };
+    if (headerParams) {
+        const headers = new Headers();
+        appendToHeaders(headers, headerParams);
+        init.headers = headers;
+    }
     const response = await fetch(url, init);
     if (!response.ok) {
         const message = await response.text();
@@ -20,10 +32,11 @@ export async function get(url, includeCredentials = true) {
     }
     return (await response.json());
 }
-export async function post(url, data, includeCredentials = true) {
+export async function post(url, data, includeCredentials = true, headerParams) {
     const init = { method: 'POST', credentials: includeCredentials ? 'include' : 'same-origin', body: JSON.stringify(data) };
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
+    appendToHeaders(headers, headerParams);
     init.headers = headers;
     const request = new Request(url, init);
     const response = await fetch(request);
@@ -33,8 +46,13 @@ export async function post(url, data, includeCredentials = true) {
     }
     return (await response.json());
 }
-export async function del(url, includeCredentials = true) {
+export async function del(url, includeCredentials = true, headerParams) {
     const init = { method: 'DELETE', credentials: includeCredentials ? 'include' : 'same-origin' };
+    if (headerParams) {
+        const headers = new Headers();
+        appendToHeaders(headers, headerParams);
+        init.headers = headers;
+    }
     const request = new Request(url, init);
     const response = await fetch(request);
     if (!response.ok) {
@@ -50,10 +68,15 @@ export function beacon(url, data) {
     }
     return false;
 }
-export async function postFile(url, formData) {
+export async function postFile(url, formData, headerParams) {
     return new Promise((resolve, reject) => {
         const request = new XMLHttpRequest();
         request.withCredentials = true;
+        if (headerParams) {
+            for (const name in headerParams) {
+                request.setRequestHeader(name, headerParams[name]);
+            }
+        }
         request.open('POST', url);
         request.onload = () => {
             const status = request.status;

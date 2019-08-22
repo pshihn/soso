@@ -14,8 +14,21 @@ export function createUrl(path: string, baseUrl: string = '', params?: Params): 
   return url.toString();
 }
 
-export async function get<T>(url: string, includeCredentials: boolean = true): Promise<T> {
+function appendToHeaders(header: Headers, params?: Params) {
+  if (params) {
+    for (const name in params) {
+      header.append(name, params[name]);
+    }
+  }
+}
+
+export async function get<T>(url: string, includeCredentials: boolean = true, headerParams?: Params): Promise<T> {
   const init: RequestInit = { credentials: includeCredentials ? 'include' : 'same-origin' };
+  if (headerParams) {
+    const headers = new Headers();
+    appendToHeaders(headers, headerParams);
+    init.headers = headers;
+  }
   const response = await fetch(url, init);
   if (!response.ok) {
     const message = await response.text();
@@ -24,10 +37,11 @@ export async function get<T>(url: string, includeCredentials: boolean = true): P
   return (await response.json()) as T;
 }
 
-export async function post<T>(url: string, data: any, includeCredentials: boolean = true): Promise<T> {
+export async function post<T>(url: string, data: any, includeCredentials: boolean = true, headerParams?: Params): Promise<T> {
   const init: RequestInit = { method: 'POST', credentials: includeCredentials ? 'include' : 'same-origin', body: JSON.stringify(data) };
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
+  appendToHeaders(headers, headerParams);
   init.headers = headers;
   const request = new Request(url, init);
   const response = await fetch(request);
@@ -38,8 +52,13 @@ export async function post<T>(url: string, data: any, includeCredentials: boolea
   return (await response.json()) as T;
 }
 
-export async function del(url: string, includeCredentials: boolean = true): Promise<Response> {
+export async function del(url: string, includeCredentials: boolean = true, headerParams?: Params): Promise<Response> {
   const init: RequestInit = { method: 'DELETE', credentials: includeCredentials ? 'include' : 'same-origin' };
+  if (headerParams) {
+    const headers = new Headers();
+    appendToHeaders(headers, headerParams);
+    init.headers = headers;
+  }
   const request = new Request(url, init);
   const response = await fetch(request);
   if (!response.ok) {
@@ -57,10 +76,15 @@ export function beacon(url: string, data: any): boolean {
   return false;
 }
 
-export async function postFile<T>(url: string, formData: FormData): Promise<T> {
+export async function postFile<T>(url: string, formData: FormData, headerParams?: Params): Promise<T> {
   return new Promise((resolve, reject) => {
     const request = new XMLHttpRequest();
     request.withCredentials = true;
+    if (headerParams) {
+      for (const name in headerParams) {
+        request.setRequestHeader(name, headerParams[name]);
+      }
+    }
     request.open('POST', url);
     request.onload = () => {
       const status = request.status;
