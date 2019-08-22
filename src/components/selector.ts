@@ -18,6 +18,11 @@ export class SosoSelector extends LitElement {
   private pageMap = new Map<string, HTMLElement>();
   private current?: PageElement;
 
+  set selectedForced(value: string) {
+    this.selected = value;
+    this.requestUpdate();
+  }
+
   static get styles(): CSSResult {
     return css`
     :host {
