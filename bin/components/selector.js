@@ -16,6 +16,10 @@ let SosoSelector = class SosoSelector extends LitElement {
         this.pages = [];
         this.pageMap = new Map();
     }
+    set selectedForced(value) {
+        this.selected = value;
+        this.requestUpdate();
+    }
     static get styles() {
         return css `
     :host {
