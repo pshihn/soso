@@ -80,12 +80,12 @@ export async function postFile<T>(url: string, formData: FormData, headerParams?
   return new Promise((resolve, reject) => {
     const request = new XMLHttpRequest();
     request.withCredentials = true;
+    request.open('POST', url);
     if (headerParams) {
       for (const name in headerParams) {
         request.setRequestHeader(name, headerParams[name]);
       }
     }
-    request.open('POST', url);
     request.onload = () => {
       const status = request.status;
       if (status === 0 || status >= 400) {
