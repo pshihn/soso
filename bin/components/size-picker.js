@@ -122,6 +122,15 @@ let SosoSizePicker = class SosoSizePicker extends LitElement {
         if (this.range) {
             this.range.value = `${Math.max(0, Math.min(1, v))}`;
         }
+        else {
+            this.pendingValue = v;
+        }
+    }
+    firstUpdated() {
+        if (this.pendingValue !== undefined) {
+            this.range.value = `${Math.max(0, Math.min(1, this.pendingValue))}`;
+            this.pendingValue = undefined;
+        }
     }
 };
 __decorate([
