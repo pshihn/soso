@@ -5,6 +5,7 @@ import { fire } from '../utils/ui-utils';
 export class SosoSizePicker extends LitElement {
   @query('#range')
   private range?: HTMLInputElement;
+  private pendingValue?: number;
 
   static get styles(): CSSResult {
     return css`
@@ -121,6 +122,15 @@ export class SosoSizePicker extends LitElement {
   set value(v: number) {
     if (this.range) {
       this.range.value = `${Math.max(0, Math.min(1, v))}`;
+    } else {
+      this.pendingValue = v;
+    }
+  }
+
+  firstUpdated() {
+    if (this.pendingValue !== undefined) {
+      this.range!.value = `${Math.max(0, Math.min(1, this.pendingValue))}`;
+      this.pendingValue = undefined;
     }
   }
 }
