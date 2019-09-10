@@ -4,6 +4,7 @@ export declare class SosoSizePicker extends LitElement {
     private pendingValue?;
     static readonly styles: CSSResult;
     render(): TemplateResult;
+    focus(): void;
     private onInput;
     value: number;
     firstUpdated(): void;
