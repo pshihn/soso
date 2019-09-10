@@ -96,6 +96,12 @@ export class SosoHuePicker extends LitElement {
     `;
   }
 
+  focus() {
+    if (this.range) {
+      this.range.focus();
+    }
+  }
+
   private onInput(e: Event) {
     e.stopPropagation();
     const value = +this.range!.value;

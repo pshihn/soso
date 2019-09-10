@@ -107,6 +107,11 @@ let SosoSizePicker = class SosoSizePicker extends LitElement {
     </div>
     `;
     }
+    focus() {
+        if (this.range) {
+            this.range.focus();
+        }
+    }
     onInput(e) {
         e.stopPropagation();
         const value = +this.range.value;

@@ -3,6 +3,7 @@ export declare class SosoHuePicker extends LitElement {
     private range?;
     static readonly styles: CSSResult;
     render(): TemplateResult;
+    focus(): void;
     private onInput;
     value: number;
     private updateThumbColor;
