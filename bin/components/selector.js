@@ -67,6 +67,7 @@ let SosoSelector = class SosoSelector extends LitElement {
                 }
             }
         }
+        this.updated();
     }
     firstUpdated() {
         this.mapPages();
