@@ -72,6 +72,7 @@ export class SosoSelector extends LitElement {
         }
       }
     }
+    this.updated();
   }
 
   firstUpdated() {
