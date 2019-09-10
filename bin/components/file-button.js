@@ -77,7 +77,7 @@ let SosoFileButton = class SosoFileButton extends LitElement {
       <span>
         <slot></slot>
       </span>
-      <input id="fi" type="file" accept="${this.accept}" capture="${this.capture}" @change="${this.fileChanged}">
+      <input id="fi" type="file" accept="${this.accept}" @change="${this.fileChanged}">
     </button>
     `;
     }
@@ -99,10 +99,6 @@ __decorate([
     property({ type: String }),
     __metadata("design:type", String)
 ], SosoFileButton.prototype, "accept", void 0);
-__decorate([
-    property({ type: String }),
-    __metadata("design:type", String)
-], SosoFileButton.prototype, "capture", void 0);
 __decorate([
     query('#fi'),
     __metadata("design:type", HTMLInputElement)

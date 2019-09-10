@@ -3,7 +3,6 @@ import { LitElement, html, TemplateResult, customElement, property, css, CSSResu
 @customElement('soso-file-button')
 export class SosoFileButton extends LitElement {
   @property({ type: String }) accept?: string;
-  @property({ type: String }) capture?: string;
 
   @query('#fi') private fileInput?: HTMLInputElement;
 
@@ -78,7 +77,7 @@ export class SosoFileButton extends LitElement {
       <span>
         <slot></slot>
       </span>
-      <input id="fi" type="file" accept="${this.accept}" capture="${this.capture}" @change="${this.fileChanged}">
+      <input id="fi" type="file" accept="${this.accept}" @change="${this.fileChanged}">
     </button>
     `;
   }
