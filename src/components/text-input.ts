@@ -3,8 +3,9 @@ import { flex } from '../styles/flex';
 
 @customElement('soso-text-input')
 export class SosoTextInput extends LitElement {
-  @property() label = ''
+  @property() label = '';
   @property() type = 'text';
+  @property({ type: Boolean }) disabled = false;
   @property({ type: Boolean }) minimal = false;
   @property({ type: String }) autocomplete = '';
 
@@ -180,7 +181,7 @@ export class SosoTextInput extends LitElement {
     const midOverlayClass = (this.label || '').trim() ? '' : 'empty';
     return html`
     <div id="container" class="${this.minimal ? 'minimal' : ''}">
-      <input type="${this.type}" autocomplete="${this.autocomplete}" @focus="${this.onFocus}" @blur="${this.onBlur}" @input="${this.onInput}">
+      <input type="${this.type}" ?disabled="${this.disabled}" autocomplete="${this.autocomplete}" @focus="${this.onFocus}" @blur="${this.onBlur}" @input="${this.onInput}">
       <div id="overlay" class="horizontal layout">
         <div id="leftOverlay"></div>
         <div id="midOverlay" class="${midOverlayClass}">
