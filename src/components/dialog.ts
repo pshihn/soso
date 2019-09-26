@@ -20,7 +20,7 @@ export class SosoDialogContainer extends LitElement {
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         box-sizing: border-box;
-        z-index: var(--soso-dialog-z-index, 10);
+        z-index: var(--soso-dialog-z-index, 99999);
       }
       #contentCell {
         padding: var(--soso-dialog-content-padding, 5px);
@@ -111,8 +111,8 @@ export class SosoDialogHelper {
       this.dlg.open = false;
       setTimeout(() => {
         if (this.dlg && (!this.dlg.open)) {
-          document.body.style.overflow = null;
-          document.documentElement!.style.overflow = null;
+          document.body.style.overflow = '';
+          document.documentElement!.style.overflow = '';
         }
       }, 500);
     }

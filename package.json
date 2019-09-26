@@ -1,6 +1,6 @@
 {
   "name": "soso",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Lightweight set of custom elements used in web dev",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/pshihn/soso#readme",
   "devDependencies": {
-    "lit-element": "^2.2.0",
-    "typescript": "^3.5.2"
+    "lit-element": "^2.2.1",
+    "typescript": "^3.6.3"
   }
 }
