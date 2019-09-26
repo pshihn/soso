@@ -13,6 +13,7 @@ let SosoTextArea = class SosoTextArea extends LitElement {
     constructor() {
         super(...arguments);
         this.label = '';
+        this.disabled = false;
     }
     static get styles() {
         return [
@@ -151,7 +152,7 @@ let SosoTextArea = class SosoTextArea extends LitElement {
         const midOverlayClass = (this.label || '').trim() ? '' : 'empty';
         return html `
     <div id="container">
-      <textarea @focus="${this.onFocus}" @blur="${this.onBlur}" @input="${this.onInput}"></textarea>
+      <textarea ?disabled="${this.disabled}" @focus="${this.onFocus}" @blur="${this.onBlur}" @input="${this.onInput}"></textarea>
       <div id="overlay" class="horizontal layout">
         <div id="leftOverlay"></div>
         <div id="midOverlay" class="${midOverlayClass}">
@@ -208,6 +209,10 @@ __decorate([
     property(),
     __metadata("design:type", Object)
 ], SosoTextArea.prototype, "label", void 0);
+__decorate([
+    property({ type: Boolean }),
+    __metadata("design:type", Object)
+], SosoTextArea.prototype, "disabled", void 0);
 __decorate([
     query('#container'),
     __metadata("design:type", HTMLDivElement)
