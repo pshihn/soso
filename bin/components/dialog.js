@@ -26,8 +26,6 @@ let SosoDialogContainer = class SosoDialogContainer extends LitElement {
         bottom: 0;
         pointer-events: none;
         overflow: hidden;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
         box-sizing: border-box;
         z-index: var(--soso-dialog-z-index, 99999);
       }
@@ -55,6 +53,9 @@ let SosoDialogContainer = class SosoDialogContainer extends LitElement {
         left: 0;
         right: 0;
         bottom: 0;
+        overflow: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
       }
 
       #container.showing {
