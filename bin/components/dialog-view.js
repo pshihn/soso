@@ -37,7 +37,7 @@ let SosoDialogView = class SosoDialogView extends LitElement {
       display: var(--soso-dialog-title-display, block);
     }
     #content {
-      padding: 16px;
+      padding: var(--soso-dialog-content-padding, 16px);
     }
     #footer {
       padding: 16px;
