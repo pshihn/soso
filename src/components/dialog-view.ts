@@ -20,8 +20,8 @@ export class SosoDialogView extends LitElement {
       padding: 16px;
       text-transform: capitalize;
       text-align: var(--soso-dialog-title-align, left);
-      background: var(--soso-dialog-title-bg, #f5f5f5);
-      color: var(--soso-dialog-title-color, #000000);
+      background: var(--soso-dialog-title-bg, var(--slick-discovery-highlight-color, #018786));
+      color: var(--soso-dialog-title-color, white);
       border-bottom: var(--soso-dialog-title-border, none);
       letter-spacing: 0.8px;
       font-size: 1.15em;
@@ -33,7 +33,7 @@ export class SosoDialogView extends LitElement {
     #footer {
       padding: 16px;
       text-align: var(--soso-dialog-footer-align, right);
-      background: var(--soso-dialog-footer-bg, #f5f5f5);
+      background: var(--soso-dialog-footer-bg, none);
       border-top: var(--soso-dialog-footer-border, none);
     }
     #footer ::slotted(*) {

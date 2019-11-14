@@ -27,7 +27,7 @@ let SosoDialogContainer = class SosoDialogContainer extends LitElement {
         pointer-events: none;
         overflow: hidden;
         box-sizing: border-box;
-        z-index: var(--soso-dialog-z-index, 99999);
+        z-index: var(--soso-dialog-z-index, var(--slick-discovery-zindex, var(--slick-toolbar-zindex, 900002)));
       }
       #contentCell {
         padding: var(--soso-dialog-content-padding, 5px);
