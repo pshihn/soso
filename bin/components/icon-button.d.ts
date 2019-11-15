@@ -4,7 +4,7 @@ export declare class SosoIconButton extends LitElement {
     icon?: string;
     iconkey?: string;
     disabled: boolean;
-    static readonly styles: CSSResult;
+    static get styles(): CSSResult;
     render(): TemplateResult;
     updated(changed: PropertyValues): void;
 }

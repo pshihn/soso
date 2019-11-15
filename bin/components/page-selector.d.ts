@@ -9,9 +9,10 @@ export declare class SosoPageSelector extends LitElement {
     private pages;
     private pageMap;
     private current?;
-    static readonly styles: CSSResult;
+    static get styles(): CSSResult;
     render(): TemplateResult;
-    selected: string;
+    get selected(): string;
+    set selected(value: string);
     firstUpdated(): void;
     private getElement;
     updated(): void;

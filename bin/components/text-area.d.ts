@@ -5,11 +5,12 @@ export declare class SosoTextArea extends LitElement {
     private container?;
     private input?;
     private pendingValue?;
-    static readonly styles: CSSResultArray;
+    static get styles(): CSSResultArray;
     render(): TemplateResult;
     firstUpdated(): void;
     private onInput;
     private onFocus;
     private onBlur;
-    value: string;
+    get value(): string;
+    set value(v: string);
 }

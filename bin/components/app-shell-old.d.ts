@@ -3,7 +3,7 @@ export declare class SosoAppShell extends LitElement {
     drawerOpen: boolean;
     disableDrawer: boolean;
     private resizeListener;
-    static readonly styles: CSSResultArray;
+    static get styles(): CSSResultArray;
     render(): TemplateResult;
     connectedCallback(): void;
     disconnectedCallback(): void;

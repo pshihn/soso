@@ -3,7 +3,7 @@ export declare class SosoButton extends LitElement {
     outlined: boolean;
     solid: boolean;
     disabled: boolean;
-    static readonly styles: CSSResult;
+    static get styles(): CSSResult;
     render(): TemplateResult;
     updated(changed: PropertyValues): void;
 }

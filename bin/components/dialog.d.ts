@@ -1,7 +1,7 @@
 import { LitElement, TemplateResult, CSSResultArray } from 'lit-element';
 export declare class SosoDialogContainer extends LitElement {
     open: boolean;
-    static readonly styles: CSSResultArray;
+    static get styles(): CSSResultArray;
     render(): TemplateResult;
 }
 export declare class SosoDialogHelper {

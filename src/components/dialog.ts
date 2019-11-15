@@ -103,6 +103,7 @@ export class SosoDialogHelper {
     setTimeout(() => {
       this.dlg!.open = true;
     }, 150);
+    console.log('sss', document.body.style.overflow, document.documentElement!.style.overflow);
     document.body.style.overflow = 'hidden';
     document.documentElement!.style.overflow = 'hidden';
   }

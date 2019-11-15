@@ -3,7 +3,7 @@ export declare class SosoFileButton extends LitElement {
     accept?: string;
     private fileInput?;
     private file?;
-    static readonly styles: CSSResult;
+    static get styles(): CSSResult;
     render(): TemplateResult;
     private fileChanged;
     clear(): void;
