@@ -84,6 +84,7 @@ export class SosoDialogContainer extends LitElement {
 export class SosoDialogHelper {
   private dlg?: SosoDialogContainer;
   private view?: HTMLElement;
+  private originalOverflows = ['', ''];
 
   show(node: HTMLElement) {
     if (!node) {
@@ -103,7 +104,7 @@ export class SosoDialogHelper {
     setTimeout(() => {
       this.dlg!.open = true;
     }, 150);
-    console.log('sss', document.body.style.overflow, document.documentElement!.style.overflow);
+    this.originalOverflows = [document.body.style.overflow || '', document.documentElement!.style.overflow || ''];
     document.body.style.overflow = 'hidden';
     document.documentElement!.style.overflow = 'hidden';
   }
@@ -113,8 +114,8 @@ export class SosoDialogHelper {
       this.dlg.open = false;
       setTimeout(() => {
         if (this.dlg && (!this.dlg.open)) {
-          document.body.style.overflow = '';
-          document.documentElement!.style.overflow = '';
+          document.body.style.overflow = this.originalOverflows[0] || '';
+          document.documentElement!.style.overflow = this.originalOverflows[1] || '';
         }
       }, 500);
     }

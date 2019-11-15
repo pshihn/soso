@@ -97,6 +97,9 @@ SosoDialogContainer = __decorate([
 ], SosoDialogContainer);
 export { SosoDialogContainer };
 export class SosoDialogHelper {
+    constructor() {
+        this.originalOverflows = ['', ''];
+    }
     show(node) {
         if (!node) {
             this.hide();
@@ -115,7 +118,7 @@ export class SosoDialogHelper {
         setTimeout(() => {
             this.dlg.open = true;
         }, 150);
-        console.log('sss', document.body.style.overflow, document.documentElement.style.overflow);
+        this.originalOverflows = [document.body.style.overflow || '', document.documentElement.style.overflow || ''];
         document.body.style.overflow = 'hidden';
         document.documentElement.style.overflow = 'hidden';
     }
@@ -124,8 +127,8 @@ export class SosoDialogHelper {
             this.dlg.open = false;
             setTimeout(() => {
                 if (this.dlg && (!this.dlg.open)) {
-                    document.body.style.overflow = '';
-                    document.documentElement.style.overflow = '';
+                    document.body.style.overflow = this.originalOverflows[0] || '';
+                    document.documentElement.style.overflow = this.originalOverflows[1] || '';
                 }
             }, 500);
         }

@@ -7,6 +7,7 @@ export declare class SosoDialogContainer extends LitElement {
 export declare class SosoDialogHelper {
     private dlg?;
     private view?;
+    private originalOverflows;
     show(node: HTMLElement): void;
     hide(): void;
 }
