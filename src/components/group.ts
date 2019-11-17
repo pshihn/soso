@@ -69,7 +69,7 @@ export class SosoGroup extends LitElement {
           position: absolute;
           left: 0;
           top: 17px;
-          font-size: 1rem;
+          font-size: 1em;
           line-height: 1;
           transform: translateX(-4px) translateY(-26px) scale(0.75);
           transition: transform .15s cubic-bezier(.4,0,.2,1);

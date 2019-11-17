@@ -41,8 +41,8 @@ export class SosoTextInput extends LitElement {
           font-family: Roboto, system-ui, sans-serif;
           -moz-osx-font-smoothing: grayscale;
           -webkit-font-smoothing: antialiased;
-          font-size: 1rem;
-          line-height: 1.75rem;
+          font-size: 1em;
+          line-height: 1.75em;
           font-weight: 400;
           letter-spacing: .009375em;
           text-decoration: inherit;
@@ -109,7 +109,7 @@ export class SosoTextInput extends LitElement {
           left: 0;
           top: 17px;
           opacity: 0.6;
-          font-size: 1rem;
+          font-size: 1em;
           line-height: 1;
           transition: transform .15s cubic-bezier(.4,0,.2,1);
           white-space: nowrap;

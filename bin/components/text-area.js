@@ -111,7 +111,7 @@ let SosoTextArea = class SosoTextArea extends LitElement {
           left: 0;
           top: 17px;
           opacity: 0.6;
-          font-size: 1rem;
+          font-size: 1em;
           line-height: 1;
           transition: transform .15s cubic-bezier(.4,0,.2,1);
           white-space: nowrap;
