@@ -62,7 +62,7 @@ export class SosoGroup extends LitElement {
         }
         #midOverlay span {
           opacity: 0;
-          font-size: 0.75rem;
+          font-size: 0.75em;
           white-space: nowrap;
         }
         label {
