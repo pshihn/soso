@@ -9,7 +9,7 @@ export class SosoList extends LitElement {
   @property({ type: Boolean }) horizontal = false;
 
   @query('slot')
-  private slotElement?: HTMLSlotElement;
+  private slotElement?: HTMLElement;
 
   static get styles(): CSSResultArray {
     return [
@@ -32,7 +32,7 @@ export class SosoList extends LitElement {
   }
 
   updated() {
-    const assigned = (this.slotElement!.assignedNodes() || []).filter((d) => d.nodeType === Node.ELEMENT_NODE);
+    const assigned = ((this.slotElement! as HTMLSlotElement).assignedNodes() || []).filter((d) => d.nodeType === Node.ELEMENT_NODE);
     assigned.forEach((d) => {
       const item = d as SosoItem;
       item.selected = !!(this.selected && item.value === this.selected);

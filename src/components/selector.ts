@@ -12,7 +12,7 @@ export class SosoSelector extends LitElement {
   @property({ type: String }) default: string = 'home';
 
   @query('slot')
-  private slotElement?: HTMLSlotElement;
+  private slotElement?: HTMLElement;
 
   private pages: HTMLElement[] = [];
   private pageMap = new Map<string, HTMLElement>();
@@ -53,7 +53,7 @@ export class SosoSelector extends LitElement {
     this.pages = [];
     this.pageMap.clear();
     if (this.slotElement) {
-      const assigned = this.slotElement.assignedNodes();
+      const assigned = (this.slotElement as HTMLSlotElement).assignedNodes();
       if (assigned && assigned.length) {
         for (let i = 0; i < assigned.length; i++) {
           const n = assigned[i];

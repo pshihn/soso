@@ -59,7 +59,7 @@ __decorate([
 ], SosoList.prototype, "horizontal", void 0);
 __decorate([
     query('slot'),
-    __metadata("design:type", HTMLSlotElement)
+    __metadata("design:type", HTMLElement)
 ], SosoList.prototype, "slotElement", void 0);
 SosoList = __decorate([
     customElement('soso-list')
