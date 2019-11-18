@@ -11,7 +11,7 @@ export class SosoPageSelector extends LitElement {
   @property({ type: String }) private _selected?: string;
 
   @query('slot')
-  private slotElement?: HTMLSlotElement;
+  private slotElement?: HTMLElement;
 
   private pages: HTMLElement[] = [];
   private pageMap = new Map<string, HTMLElement>();
@@ -59,7 +59,7 @@ export class SosoPageSelector extends LitElement {
     this.pages = [];
     this.pageMap.clear();
     if (this.slotElement) {
-      const assigned = this.slotElement.assignedNodes();
+      const assigned = (this.slotElement as HTMLSlotElement).assignedNodes();
       if (assigned && assigned.length) {
         for (let i = 0; i < assigned.length; i++) {
           const n = assigned[i];

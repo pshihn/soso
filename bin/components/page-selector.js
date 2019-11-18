@@ -124,7 +124,7 @@ __decorate([
 ], SosoPageSelector.prototype, "_selected", void 0);
 __decorate([
     query('slot'),
-    __metadata("design:type", HTMLSlotElement)
+    __metadata("design:type", HTMLElement)
 ], SosoPageSelector.prototype, "slotElement", void 0);
 SosoPageSelector = __decorate([
     customElement('soso-page-selector')
