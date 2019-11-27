@@ -25,7 +25,7 @@ let SosoButton = class SosoButton extends LitElement {
     button {
       cursor: pointer;
       outline: none;
-      border-radius: 4px;
+      border-radius: var(--soso-button-radius, 4px);
       overflow: hidden;
       color: inherit;
       user-select: none;
@@ -34,7 +34,7 @@ let SosoButton = class SosoButton extends LitElement {
       text-align: center;
       font-size: inherit;
       letter-spacing: 1.25px;
-      padding: 1px 8px;
+      padding: var(--soso-button-padding, 1px 8px);
       min-height: 36px;
       text-transform: inherit;
       width: 100%;
