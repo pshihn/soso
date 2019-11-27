@@ -14,6 +14,9 @@ export declare class SosoTabBar extends LitElement {
     private activeTab?;
     static get styles(): CSSResultArray;
     render(): TemplateResult;
+    private resizeListener;
+    firstUpdated(): void;
+    disconnectedCallback(): void;
     private onTabSelect;
     updated(): void;
     private selectTab;

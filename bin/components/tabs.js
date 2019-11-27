@@ -72,6 +72,9 @@ let SosoTabBar = class SosoTabBar extends LitElement {
     constructor() {
         super(...arguments);
         this.selected = '';
+        this.resizeListener = () => {
+            requestAnimationFrame(() => requestAnimationFrame(() => this.refreshSelectionBar()));
+        };
     }
     static get styles() {
         return [
@@ -89,6 +92,7 @@ let SosoTabBar = class SosoTabBar extends LitElement {
       }
       #tabPanel {
         position: relative;
+        justify-content: center;
       }
       #tabPanel::after {
         content: '';
@@ -113,6 +117,12 @@ let SosoTabBar = class SosoTabBar extends LitElement {
       </div>
     </div>
     `;
+    }
+    firstUpdated() {
+        window.addEventListener('resize', this.resizeListener, { passive: true });
+    }
+    disconnectedCallback() {
+        window.removeEventListener('resize', this.resizeListener);
     }
     onTabSelect(e) {
         e.stopPropagation();
