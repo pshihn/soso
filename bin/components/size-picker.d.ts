@@ -2,10 +2,11 @@ import { LitElement, TemplateResult, CSSResult } from 'lit-element';
 export declare class SosoSizePicker extends LitElement {
     private range?;
     private pendingValue?;
-    static readonly styles: CSSResult;
+    static get styles(): CSSResult;
     render(): TemplateResult;
     focus(): void;
     private onInput;
-    value: number;
+    get value(): number;
+    set value(v: number);
     firstUpdated(): void;
 }

@@ -10,8 +10,8 @@ export declare class SosoSelector extends LitElement {
     private pages;
     private pageMap;
     private current?;
-    selectedForced: string;
-    static readonly styles: CSSResult;
+    set selectedForced(value: string);
+    static get styles(): CSSResult;
     render(): TemplateResult;
     private mapPages;
     firstUpdated(): void;

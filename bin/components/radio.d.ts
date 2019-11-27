@@ -7,7 +7,7 @@ export declare class SosoRadio extends LitElement implements Checkable {
     private button?;
     controller?: SelectionController;
     constructor();
-    static readonly styles: CSSResult;
+    static get styles(): CSSResult;
     render(): TemplateResult;
     private toggle;
     private focusHandler;
