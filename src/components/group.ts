@@ -1,10 +1,9 @@
-import { LitElement, html, TemplateResult, customElement, css, CSSResultArray, query, property } from 'lit-element';
+import { LitElement, html, TemplateResult, customElement, css, CSSResultArray, property } from 'lit-element';
 import { flex } from '../styles/flex';
 
 @customElement('soso-group')
 export class SosoGroup extends LitElement {
   @property() label = '';
-  @query('#container') private container?: HTMLDivElement;
 
   static get styles(): CSSResultArray {
     return [

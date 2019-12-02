@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { LitElement, html, customElement, css, query, property } from 'lit-element';
+import { LitElement, html, customElement, css, property } from 'lit-element';
 import { flex } from '../styles/flex';
 let SosoGroup = class SosoGroup extends LitElement {
     constructor() {
@@ -103,10 +103,6 @@ __decorate([
     property(),
     __metadata("design:type", Object)
 ], SosoGroup.prototype, "label", void 0);
-__decorate([
-    query('#container'),
-    __metadata("design:type", HTMLDivElement)
-], SosoGroup.prototype, "container", void 0);
 SosoGroup = __decorate([
     customElement('soso-group')
 ], SosoGroup);
