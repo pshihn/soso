@@ -71,7 +71,7 @@ let SosoGroup = class SosoGroup extends LitElement {
           white-space: nowrap;
           line-height: 1;
           white-space: nowrap;
-          color: #808080;
+          color: var(--soso-text-input-highlight);
           letter-spacing: 1px;
           text-transform: uppercase;
           font-size: 15px;
