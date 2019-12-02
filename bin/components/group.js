@@ -63,41 +63,22 @@ let SosoGroup = class SosoGroup extends LitElement {
           border-top: none;
           position: relative;
           border-color: var(--soso-border-color);
-          padding-right: 8px;
         }
         #midOverlay.empty {
           padding-right: 0;
         }
         #midOverlay span {
-          opacity: 0;
-          font-size: 0.75em;
           white-space: nowrap;
-        }
-        label {
-          position: absolute;
-          left: 0;
-          top: 17px;
-          font-size: 1em;
           line-height: 1;
-          transform: translateX(-4px) translateY(-26px) scale(0.75);
-          transition: transform .15s cubic-bezier(.4,0,.2,1);
           white-space: nowrap;
-        }
-        #container.focussed {
-          --soso-border-color: var(--soso-text-input-highlight, #000);
-          --soso-text-input-border: 2px solid;
-          color: var(--soso-border-color);
-        }
-
-        @media (hover: hover) {
-          #container:hover {
-            --soso-border-color: rgba(0,0,0,0.65);
-          }
-          #container.focussed {
-            --soso-border-color: var(--soso-text-input-highlight, #000);
-            --soso-text-input-border: 2px solid;
-            color: var(--soso-border-color);
-          }
+          color: #808080;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          font-size: 15px;
+          margin: 0 8px;
+          transform: translateY(-50%);
+          display: block;
+          letter-spacing: 1.25px;
         }
       `
         ];
@@ -105,24 +86,17 @@ let SosoGroup = class SosoGroup extends LitElement {
     render() {
         const midOverlayClass = (this.label || '').trim() ? '' : 'empty';
         return html `
-    <div id="container" tabindex="0" @focus="${this.onFocus}" @blur="${this.onBlur}">
+    <div id="container">
       <slot></slot>
       <div id="overlay" class="horizontal layout">
         <div id="leftOverlay"></div>
         <div id="midOverlay" class="${midOverlayClass}">
           <span>${this.label}</span>
-          <label>${this.label}</label>
         </div>
         <div id="rightOverlay" class="flex"></div>
       </div>
     </div>
     `;
-    }
-    onFocus() {
-        this.container.classList.add('focussed');
-    }
-    onBlur() {
-        this.container.classList.remove('focussed');
     }
 };
 __decorate([
