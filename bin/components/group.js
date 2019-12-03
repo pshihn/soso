@@ -7,12 +7,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { LitElement, html, customElement, css, property } from 'lit-element';
+import { LitElement, html, customElement, css, property, query } from 'lit-element';
 import { flex } from '../styles/flex';
+import { iconMap } from './icon-map';
+import './icon';
+const ICON_KEY = 'soso-group';
+iconMap.define({
+    'right': 'M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z',
+    'down': 'M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z'
+}, ICON_KEY);
 let SosoGroup = class SosoGroup extends LitElement {
     constructor() {
         super(...arguments);
         this.label = '';
+        this.collapsed = true;
     }
     static get styles() {
         return [
@@ -77,8 +85,21 @@ let SosoGroup = class SosoGroup extends LitElement {
           font-size: 15px;
           margin: 0 8px;
           transform: translateY(-50%);
-          display: block;
+          display: flex;
           letter-spacing: 1.25px;
+          pointer-events: auto;
+          cursor: pointer;
+        }
+        #inner {
+          position: relative;
+          overflow: hidden;
+          opacity: 0;
+          height: 0;
+          transition: opacity 0.3s ease, height 0.3s ease;
+        }
+        soso-icon {
+          padding: 0 6px;
+          margin-left: -8px;
         }
       `
         ];
@@ -87,22 +108,64 @@ let SosoGroup = class SosoGroup extends LitElement {
         const midOverlayClass = (this.label || '').trim() ? '' : 'empty';
         return html `
     <div id="container">
-      <slot></slot>
+      <div id="inner">
+        <div id="innerContent">
+          <slot></slot>
+        </div>
+      </div>
       <div id="overlay" class="horizontal layout">
         <div id="leftOverlay"></div>
         <div id="midOverlay" class="${midOverlayClass}">
-          <span>${this.label}</span>
+          <span class="horizontal layout center" @click="${() => this.collapsed = !this.collapsed}">
+            <soso-icon .iconkey="${ICON_KEY}" .icon="${this.collapsed ? 'right' : 'down'}"></soso-icon>${this.label}
+          </span>
         </div>
         <div id="rightOverlay" class="flex"></div>
       </div>
     </div>
     `;
     }
+    updated() {
+        if (this.collapsed) {
+            this.inner.style.height = `${this.innerContent.getBoundingClientRect().height}px`;
+            this.inner.style.opacity = `0`;
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+                if (this.collapsed) {
+                    this.inner.style.height = `6px`;
+                }
+            }));
+        }
+        else {
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+                if (!this.collapsed) {
+                    this.inner.style.height = `${this.innerContent.getBoundingClientRect().height}px`;
+                    this.inner.style.opacity = `1`;
+                    setTimeout(() => {
+                        if (!this.collapsed) {
+                            this.inner.style.height = 'auto';
+                        }
+                    }, 300);
+                }
+            }));
+        }
+    }
 };
 __decorate([
     property(),
     __metadata("design:type", Object)
 ], SosoGroup.prototype, "label", void 0);
+__decorate([
+    property(),
+    __metadata("design:type", Object)
+], SosoGroup.prototype, "collapsed", void 0);
+__decorate([
+    query('#inner'),
+    __metadata("design:type", HTMLDivElement)
+], SosoGroup.prototype, "inner", void 0);
+__decorate([
+    query('#innerContent'),
+    __metadata("design:type", HTMLDivElement)
+], SosoGroup.prototype, "innerContent", void 0);
 SosoGroup = __decorate([
     customElement('soso-group')
 ], SosoGroup);
