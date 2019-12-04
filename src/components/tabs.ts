@@ -147,7 +147,7 @@ export class SosoTabBar extends LitElement {
     }
   }
 
-  private refreshSelectionBar() {
+  refreshSelectionBar() {
     if (this.activeTab && this.tabPanel) {
       const parentRect = this.tabPanel.getBoundingClientRect();
       const rect = this.activeTab.getBoundingClientRect();

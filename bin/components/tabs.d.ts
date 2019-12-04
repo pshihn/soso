@@ -20,5 +20,5 @@ export declare class SosoTabBar extends LitElement {
     private onTabSelect;
     updated(): void;
     private selectTab;
-    private refreshSelectionBar;
+    refreshSelectionBar(): void;
 }
