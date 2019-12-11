@@ -1,10 +1,11 @@
-import { LitElement, html, TemplateResult, customElement, property, css, CSSResult } from 'lit-element';
+import { LitElement, html, TemplateResult, customElement, property, css, CSSResult, svg } from 'lit-element';
 import { iconMap } from './icon-map';
 
 @customElement('soso-icon')
 export class SosoIcon extends LitElement {
   @property({ type: String }) icon?: string;
   @property({ type: String }) iconkey?: string;
+  @property() customSvg?: string;
 
   static get styles(): CSSResult {
     return css`
@@ -38,6 +39,9 @@ export class SosoIcon extends LitElement {
   render(): TemplateResult {
     const icon = this.icon || '';
     const path = iconMap.get(icon, this.iconkey);
+    if (this.customSvg) {
+      return svg`${this.customSvg}`;
+    }
     return html`
     <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
       <g>

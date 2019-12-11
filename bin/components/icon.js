@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { LitElement, html, customElement, property, css } from 'lit-element';
+import { LitElement, html, customElement, property, css, svg } from 'lit-element';
 import { iconMap } from './icon-map';
 let SosoIcon = class SosoIcon extends LitElement {
     static get styles() {
@@ -41,6 +41,9 @@ let SosoIcon = class SosoIcon extends LitElement {
     render() {
         const icon = this.icon || '';
         const path = iconMap.get(icon, this.iconkey);
+        if (this.customSvg) {
+            return svg `${this.customSvg}`;
+        }
         return html `
     <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
       <g>
@@ -58,6 +61,10 @@ __decorate([
     property({ type: String }),
     __metadata("design:type", String)
 ], SosoIcon.prototype, "iconkey", void 0);
+__decorate([
+    property(),
+    __metadata("design:type", String)
+], SosoIcon.prototype, "customSvg", void 0);
 SosoIcon = __decorate([
     customElement('soso-icon')
 ], SosoIcon);

@@ -5,6 +5,7 @@ import './icon';
 export class SosoFab extends LitElement {
   @property({ type: String }) icon?: string;
   @property({ type: String }) iconkey?: string;
+  @property() customSvg?: string;
 
   static get styles(): CSSResult {
     return css`
@@ -73,7 +74,7 @@ export class SosoFab extends LitElement {
   render(): TemplateResult {
     return html`
     <button>
-      <soso-icon .icon="${this.icon}" .iconkey="${this.iconkey}"></soso-icon>
+      <soso-icon .icon="${this.icon}" .iconkey="${this.iconkey}" .customSvg="${this.customSvg}"></soso-icon>
     </button>`;
   }
 }
