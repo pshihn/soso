@@ -6,6 +6,7 @@ export class SosoIconButton extends LitElement {
   @property({ type: String }) icon?: string;
   @property({ type: String }) iconkey?: string;
   @property({ type: Boolean }) disabled = false;
+  @property() customSvg?: string;
 
   static get styles(): CSSResult {
     return css`
@@ -65,7 +66,7 @@ export class SosoIconButton extends LitElement {
   render(): TemplateResult {
     return html`
     <button ?disabled="${this.disabled}">
-      <soso-icon .icon="${this.icon}" .iconkey="${this.iconkey}"></soso-icon>
+      <soso-icon .icon="${this.icon}" .iconkey="${this.iconkey}" .customSvg="${this.customSvg}"></soso-icon>
     </button>`;
   }
 

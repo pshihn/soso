@@ -71,7 +71,7 @@ let SosoIconButton = class SosoIconButton extends LitElement {
     render() {
         return html `
     <button ?disabled="${this.disabled}">
-      <soso-icon .icon="${this.icon}" .iconkey="${this.iconkey}"></soso-icon>
+      <soso-icon .icon="${this.icon}" .iconkey="${this.iconkey}" .customSvg="${this.customSvg}"></soso-icon>
     </button>`;
     }
     updated(changed) {
@@ -92,6 +92,10 @@ __decorate([
     property({ type: Boolean }),
     __metadata("design:type", Object)
 ], SosoIconButton.prototype, "disabled", void 0);
+__decorate([
+    property(),
+    __metadata("design:type", String)
+], SosoIconButton.prototype, "customSvg", void 0);
 SosoIconButton = __decorate([
     customElement('soso-icon-button')
 ], SosoIconButton);
