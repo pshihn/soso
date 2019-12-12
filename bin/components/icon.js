@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { LitElement, html, customElement, property, css, svg } from 'lit-element';
+import { LitElement, html, customElement, property, css } from 'lit-element';
 import { iconMap } from './icon-map';
 let SosoIcon = class SosoIcon extends LitElement {
     static get styles() {
@@ -42,7 +42,7 @@ let SosoIcon = class SosoIcon extends LitElement {
         const icon = this.icon || '';
         const path = iconMap.get(icon, this.iconkey);
         if (this.customSvg) {
-            return svg `${this.customSvg}`;
+            return html ``;
         }
         return html `
     <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
@@ -51,6 +51,11 @@ let SosoIcon = class SosoIcon extends LitElement {
       </g>
     </svg>
     `;
+    }
+    updated(changed) {
+        if (changed.has('customSvg') && this.customSvg) {
+            this.shadowRoot.innerHTML = this.customSvg;
+        }
     }
 };
 __decorate([
