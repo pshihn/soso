@@ -17,6 +17,7 @@ let SosoTextInput = class SosoTextInput extends LitElement {
         this.disabled = false;
         this.minimal = false;
         this.autocomplete = '';
+        this.placeholder = '';
     }
     static get styles() {
         return [
@@ -181,7 +182,7 @@ let SosoTextInput = class SosoTextInput extends LitElement {
         const midOverlayClass = (this.label || '').trim() ? '' : 'empty';
         return html `
     <div id="container" class="${this.minimal ? 'minimal' : ''}">
-      <input type="${this.type}" ?disabled="${this.disabled}" autocomplete="${this.autocomplete}" @focus="${this.onFocus}" @blur="${this.onBlur}" @input="${this.onInput}">
+      <input type="${this.type}" ?disabled="${this.disabled}" autocomplete="${this.autocomplete}" placeholder="${this.placeholder}" @focus="${this.onFocus}" @blur="${this.onBlur}" @input="${this.onInput}">
       <div id="overlay" class="horizontal layout">
         <div id="leftOverlay"></div>
         <div id="midOverlay" class="${midOverlayClass}">
@@ -254,6 +255,10 @@ __decorate([
     property({ type: String }),
     __metadata("design:type", Object)
 ], SosoTextInput.prototype, "autocomplete", void 0);
+__decorate([
+    property(),
+    __metadata("design:type", Object)
+], SosoTextInput.prototype, "placeholder", void 0);
 __decorate([
     query('#container'),
     __metadata("design:type", HTMLDivElement)

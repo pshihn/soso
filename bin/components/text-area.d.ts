@@ -2,6 +2,7 @@ import { LitElement, TemplateResult, CSSResultArray } from 'lit-element';
 export declare class SosoTextArea extends LitElement {
     label: string;
     disabled: boolean;
+    placeholder: string;
     private container?;
     private input?;
     private pendingValue?;

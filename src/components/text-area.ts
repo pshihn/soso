@@ -5,6 +5,7 @@ import { flex } from '../styles/flex';
 export class SosoTextArea extends LitElement {
   @property() label = '';
   @property({ type: Boolean }) disabled = false;
+  @property() placeholder = '';
 
   @query('#container')
   private container?: HTMLDivElement;
@@ -152,7 +153,7 @@ export class SosoTextArea extends LitElement {
     const midOverlayClass = (this.label || '').trim() ? '' : 'empty';
     return html`
     <div id="container">
-      <textarea ?disabled="${this.disabled}" @focus="${this.onFocus}" @blur="${this.onBlur}" @input="${this.onInput}"></textarea>
+      <textarea placeholder="${this.placeholder}" ?disabled="${this.disabled}" @focus="${this.onFocus}" @blur="${this.onBlur}" @input="${this.onInput}"></textarea>
       <div id="overlay" class="horizontal layout">
         <div id="leftOverlay"></div>
         <div id="midOverlay" class="${midOverlayClass}">

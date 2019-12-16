@@ -5,6 +5,7 @@ export declare class SosoTextInput extends LitElement {
     disabled: boolean;
     minimal: boolean;
     autocomplete: string;
+    placeholder: string;
     private container?;
     input?: HTMLInputElement;
     private pendingValue?;
