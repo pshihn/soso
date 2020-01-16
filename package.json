@@ -21,6 +21,6 @@
   "homepage": "https://github.com/pshihn/soso#readme",
   "devDependencies": {
     "lit-element": "^2.2.1",
-    "typescript": "^3.6.3"
+    "typescript": "^3.7.5"
   }
 }
