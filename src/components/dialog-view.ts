@@ -1,6 +1,7 @@
-import { LitElement, html, TemplateResult, customElement, property, css, CSSResult } from 'lit-element';
+import { LitElement, html, TemplateResult, property, css, CSSResult } from 'lit-element';
+import { element } from '../registry';
 
-@customElement('soso-dialog-view')
+@element('soso-dialog-view')
 export class SosoDialogView extends LitElement {
   @property() label = '';
 

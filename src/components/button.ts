@@ -1,6 +1,7 @@
-import { LitElement, html, TemplateResult, customElement, property, css, CSSResult, PropertyValues } from 'lit-element';
+import { LitElement, html, TemplateResult, property, css, CSSResult, PropertyValues } from 'lit-element';
+import { element } from '../registry';
 
-@customElement('soso-button')
+@element('soso-button')
 export class SosoButton extends LitElement {
   @property({ type: Boolean }) outlined = false;
   @property({ type: Boolean }) solid = false;

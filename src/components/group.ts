@@ -1,6 +1,7 @@
-import { LitElement, html, TemplateResult, customElement, css, CSSResultArray, property, query } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultArray, property, query } from 'lit-element';
 import { flex } from '../styles/flex';
 import { iconMap } from './icon-map';
+import { element } from '../registry';
 import './icon';
 
 const ICON_KEY = 'soso-group';
@@ -9,7 +10,7 @@ iconMap.define({
   'down': 'M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z'
 }, ICON_KEY);
 
-@customElement('soso-group')
+@element('soso-group')
 export class SosoGroup extends LitElement {
   @property() label = '';
   @property() collapsed = true;

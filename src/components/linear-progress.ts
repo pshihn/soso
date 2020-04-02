@@ -1,6 +1,7 @@
-import { LitElement, html, TemplateResult, customElement, property, css, CSSResult } from 'lit-element';
+import { LitElement, html, TemplateResult, property, css, CSSResult } from 'lit-element';
+import { element } from '../registry';
 
-@customElement('soso-linear-progress')
+@element('soso-linear-progress')
 export class SosoLinearProgress extends LitElement {
   @property({ type: Boolean }) closed = false;
 

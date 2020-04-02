@@ -7,8 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { LitElement, html, customElement, property, css, query } from 'lit-element';
+import { LitElement, html, property, css, query } from 'lit-element';
 import { fire } from '../utils/ui-utils';
+import { element } from '../registry';
 let SosoSelector = class SosoSelector extends LitElement {
     constructor() {
         super(...arguments);
@@ -132,6 +133,6 @@ __decorate([
     __metadata("design:type", HTMLElement)
 ], SosoSelector.prototype, "slotElement", void 0);
 SosoSelector = __decorate([
-    customElement('soso-selector')
+    element('soso-selector')
 ], SosoSelector);
 export { SosoSelector };

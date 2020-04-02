@@ -7,8 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { LitElement, html, customElement, property, css, query } from 'lit-element';
+import { LitElement, html, property, css, query } from 'lit-element';
 import { fire } from '../utils/ui-utils';
+import { element } from '../registry';
 let SosoPageSelector = class SosoPageSelector extends LitElement {
     constructor() {
         super(...arguments);
@@ -127,6 +128,6 @@ __decorate([
     __metadata("design:type", HTMLElement)
 ], SosoPageSelector.prototype, "slotElement", void 0);
 SosoPageSelector = __decorate([
-    customElement('soso-page-selector')
+    element('soso-page-selector')
 ], SosoPageSelector);
 export { SosoPageSelector };

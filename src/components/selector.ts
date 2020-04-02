@@ -1,12 +1,13 @@
-import { LitElement, html, TemplateResult, customElement, property, css, CSSResult, query } from 'lit-element';
+import { LitElement, html, TemplateResult, property, css, CSSResult, query } from 'lit-element';
 import { fire } from '../utils/ui-utils';
+import { element } from '../registry';
 
 export interface PageElement extends HTMLElement {
   onActivate(): void;
   onDeactivate(): void;
 }
 
-@customElement('soso-selector')
+@element('soso-selector')
 export class SosoSelector extends LitElement {
   @property({ type: String }) selected?: string;
   @property({ type: String }) default: string = 'home';

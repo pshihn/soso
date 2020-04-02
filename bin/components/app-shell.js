@@ -7,7 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { LitElement, html, customElement, css, property } from 'lit-element';
+import { LitElement, html, css, property } from 'lit-element';
+import { element } from '../registry';
 let SososAppShell = class SososAppShell extends LitElement {
     constructor() {
         super(...arguments);
@@ -139,6 +140,6 @@ __decorate([
     __metadata("design:type", Object)
 ], SososAppShell.prototype, "drawerOpen", void 0);
 SososAppShell = __decorate([
-    customElement('soso-app-shell')
+    element('soso-app-shell')
 ], SososAppShell);
 export { SososAppShell };

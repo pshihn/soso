@@ -7,7 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { LitElement, html, customElement, property, css, query } from 'lit-element';
+import { LitElement, html, property, css, query } from 'lit-element';
+import { element } from '../registry';
 let SosoFileButton = class SosoFileButton extends LitElement {
     static get styles() {
         return css `
@@ -104,6 +105,6 @@ __decorate([
     __metadata("design:type", HTMLInputElement)
 ], SosoFileButton.prototype, "fileInput", void 0);
 SosoFileButton = __decorate([
-    customElement('soso-file-button')
+    element('soso-file-button')
 ], SosoFileButton);
 export { SosoFileButton };

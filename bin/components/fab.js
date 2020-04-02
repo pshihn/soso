@@ -7,7 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { LitElement, html, customElement, property, css } from 'lit-element';
+import { LitElement, html, property, css } from 'lit-element';
+import { element } from '../registry';
 import './icon';
 let SosoFab = class SosoFab extends LitElement {
     static get styles() {
@@ -93,6 +94,6 @@ __decorate([
     __metadata("design:type", String)
 ], SosoFab.prototype, "customSvg", void 0);
 SosoFab = __decorate([
-    customElement('soso-fab')
+    element('soso-fab')
 ], SosoFab);
 export { SosoFab };

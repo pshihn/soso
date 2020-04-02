@@ -1,9 +1,10 @@
-import { LitElement, html, TemplateResult, customElement, property, css, query, CSSResultArray } from 'lit-element';
+import { LitElement, html, TemplateResult, property, css, query, CSSResultArray } from 'lit-element';
 import { SosoItem } from './item';
 import { flex } from '../styles/flex';
 import { fire } from '../utils/ui-utils';
+import { element } from '../registry';
 
-@customElement('soso-list')
+@element('soso-list')
 export class SosoList extends LitElement {
   @property() selected?: string;
   @property({ type: Boolean }) horizontal = false;

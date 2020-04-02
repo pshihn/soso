@@ -1,7 +1,8 @@
-import { LitElement, html, TemplateResult, customElement, property, css, CSSResult, query } from 'lit-element';
+import { LitElement, html, TemplateResult, property, css, CSSResult, query } from 'lit-element';
 import { iconMap } from './icon-map';
 import { fire } from '../utils/ui-utils';
 import { SelectionController, Checkable } from './ui-utils/selection-controller';
+import { element } from '../registry';
 import './icon';
 
 const ICON_KEY = 'soso-radio';
@@ -10,7 +11,7 @@ iconMap.define({
   'unfilled': 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'
 }, ICON_KEY);
 
-@customElement('soso-radio')
+@element('soso-radio')
 export class SosoRadio extends LitElement implements Checkable {
   @property({ type: Boolean }) checked = false;
   @property({ type: String }) name = '';

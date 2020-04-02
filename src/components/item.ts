@@ -1,6 +1,7 @@
-import { LitElement, html, TemplateResult, customElement, property, css, CSSResult } from 'lit-element';
+import { LitElement, html, TemplateResult, property, css, CSSResult } from 'lit-element';
+import { element } from '../registry';
 
-@customElement('soso-item')
+@element('soso-item')
 export class SosoItem extends LitElement {
   @property() value = '';
   @property({ type: Boolean }) selected = false;

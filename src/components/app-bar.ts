@@ -1,8 +1,9 @@
-import { LitElement, html, TemplateResult, customElement, css, CSSResultArray } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultArray } from 'lit-element';
 import { flex } from '../styles/flex';
 import { fire } from '../utils/ui-utils';
+import { element } from '../registry';
 
-@customElement('soso-app-bar')
+@element('soso-app-bar')
 export class SosoAppBar extends LitElement {
   static get styles(): CSSResultArray {
     return [

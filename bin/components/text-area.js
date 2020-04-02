@@ -7,8 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { LitElement, html, customElement, css, query, property } from 'lit-element';
+import { LitElement, html, css, query, property } from 'lit-element';
 import { flex } from '../styles/flex';
+import { element } from '../registry';
 let SosoTextArea = class SosoTextArea extends LitElement {
     constructor() {
         super(...arguments);
@@ -227,6 +228,6 @@ __decorate([
     __metadata("design:type", HTMLTextAreaElement)
 ], SosoTextArea.prototype, "input", void 0);
 SosoTextArea = __decorate([
-    customElement('soso-text-area')
+    element('soso-text-area')
 ], SosoTextArea);
 export { SosoTextArea };

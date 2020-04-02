@@ -1,6 +1,7 @@
-import { LitElement, html, TemplateResult, customElement, property, css, CSSResult } from 'lit-element';
+import { LitElement, html, TemplateResult, property, css, CSSResult } from 'lit-element';
 import { fire } from '../utils/ui-utils';
 import { iconMap } from './icon-map';
+import { element } from '../registry';
 import './icon';
 
 const ICON_KEY = 'soso-chip';
@@ -8,7 +9,7 @@ iconMap.define({
   close: 'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'
 }, ICON_KEY);
 
-@customElement('soso-chip')
+@element('soso-chip')
 export class SosoChip extends LitElement {
   @property({ type: Boolean }) checked = false;
 

@@ -1,6 +1,7 @@
-import { LitElement, html, TemplateResult, customElement, css, CSSResult, property } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResult, property } from 'lit-element';
+import { element } from '../registry';
 
-@customElement('soso-app-shell')
+@element('soso-app-shell')
 export class SososAppShell extends LitElement {
   @property() drawerOpen = false;
 

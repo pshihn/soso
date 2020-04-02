@@ -1,7 +1,8 @@
-import { LitElement, html, TemplateResult, customElement, css, CSSResultArray, query, property } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultArray, query, property } from 'lit-element';
 import { flex } from '../styles/flex';
+import { element } from '../registry';
 
-@customElement('soso-text-input')
+@element('soso-text-input')
 export class SosoTextInput extends LitElement {
   @property() label = '';
   @property() type = 'text';

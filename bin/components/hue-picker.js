@@ -7,8 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { LitElement, html, customElement, css, query } from 'lit-element';
+import { LitElement, html, css, query } from 'lit-element';
 import { fire } from '../utils/ui-utils';
+import { element } from '../registry';
 let SosoHuePicker = class SosoHuePicker extends LitElement {
     static get styles() {
         return css `
@@ -153,6 +154,6 @@ __decorate([
     __metadata("design:type", HTMLInputElement)
 ], SosoHuePicker.prototype, "range", void 0);
 SosoHuePicker = __decorate([
-    customElement('soso-hue-picker')
+    element('soso-hue-picker')
 ], SosoHuePicker);
 export { SosoHuePicker };

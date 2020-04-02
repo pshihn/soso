@@ -1,7 +1,8 @@
-import { LitElement, html, TemplateResult, customElement, property, css, CSSResult } from 'lit-element';
+import { LitElement, html, TemplateResult, property, css, CSSResult } from 'lit-element';
 import { fire } from '../utils/ui-utils';
+import { element } from '../registry';
 
-@customElement('soso-switch')
+@element('soso-switch')
 export class SosoSwitch extends LitElement {
   @property({ type: Boolean }) checked = false;
 

@@ -7,7 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { LitElement, html, customElement, property, css } from 'lit-element';
+import { LitElement, html, property, css } from 'lit-element';
+import { element } from '../registry';
 let SosoLinearProgress = class SosoLinearProgress extends LitElement {
     constructor() {
         super(...arguments);
@@ -95,6 +96,6 @@ __decorate([
     __metadata("design:type", Object)
 ], SosoLinearProgress.prototype, "closed", void 0);
 SosoLinearProgress = __decorate([
-    customElement('soso-linear-progress')
+    element('soso-linear-progress')
 ], SosoLinearProgress);
 export { SosoLinearProgress };

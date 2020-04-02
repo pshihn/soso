@@ -7,10 +7,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { LitElement, html, customElement, property, css, query } from 'lit-element';
+import { LitElement, html, property, css, query } from 'lit-element';
 import { iconMap } from './icon-map';
 import { fire } from '../utils/ui-utils';
 import { SelectionController } from './ui-utils/selection-controller';
+import { element } from '../registry';
 import './icon';
 const ICON_KEY = 'soso-radio';
 iconMap.define({
@@ -159,7 +160,7 @@ __decorate([
     __metadata("design:type", HTMLButtonElement)
 ], SosoRadio.prototype, "button", void 0);
 SosoRadio = __decorate([
-    customElement('soso-radio'),
+    element('soso-radio'),
     __metadata("design:paramtypes", [])
 ], SosoRadio);
 export { SosoRadio };

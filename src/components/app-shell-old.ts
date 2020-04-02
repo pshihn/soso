@@ -1,7 +1,8 @@
-import { LitElement, html, TemplateResult, customElement, css, CSSResultArray, property } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultArray, property } from 'lit-element';
 import { flex } from '../styles/flex';
+import { element } from '../registry';
 
-@customElement('soso-app-shell')
+@element('soso-app-shell')
 export class SosoAppShell extends LitElement {
   @property() drawerOpen = false;
   @property() disableDrawer = false;

@@ -1,7 +1,8 @@
-import { LitElement, html, TemplateResult, customElement, css, CSSResult, query } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResult, query } from 'lit-element';
 import { fire } from '../utils/ui-utils';
+import { element } from '../registry';
 
-@customElement('soso-hue-picker')
+@element('soso-hue-picker')
 export class SosoHuePicker extends LitElement {
   @query('#range')
   private range?: HTMLInputElement;

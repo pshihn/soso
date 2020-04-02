@@ -1,9 +1,10 @@
-import { LitElement, html, TemplateResult, customElement, css, CSSResultArray, query, property } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultArray, query, property } from 'lit-element';
 import { flex } from '../styles/flex';
 import { fire } from '../utils/ui-utils';
+import { element } from '../registry';
 import './button';
 
-@customElement('soso-tab')
+@element('soso-tab')
 export class SosoTab extends LitElement {
   @property({ type: Boolean }) selected = false;
   @property({ type: String }) value = '';
@@ -50,7 +51,7 @@ export class SosoTab extends LitElement {
   }
 }
 
-@customElement('soso-tab-bar')
+@element('soso-tab-bar')
 export class SosoTabBar extends LitElement {
   @property({ type: String }) selected = '';
   @query('slot') private slotElement?: HTMLElement;

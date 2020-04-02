@@ -7,8 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { LitElement, html, customElement, css, query, property } from 'lit-element';
+import { LitElement, html, css, query, property } from 'lit-element';
 import { flex } from '../styles/flex';
+import { element } from '../registry';
 let SosoTextInput = class SosoTextInput extends LitElement {
     constructor() {
         super(...arguments);
@@ -268,6 +269,6 @@ __decorate([
     __metadata("design:type", HTMLInputElement)
 ], SosoTextInput.prototype, "input", void 0);
 SosoTextInput = __decorate([
-    customElement('soso-text-input')
+    element('soso-text-input')
 ], SosoTextInput);
 export { SosoTextInput };

@@ -7,9 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { LitElement, html, customElement, property, css } from 'lit-element';
+import { LitElement, html, property, css } from 'lit-element';
 import { fire } from '../utils/ui-utils';
 import { iconMap } from './icon-map';
+import { element } from '../registry';
 import './icon';
 const ICON_KEY = 'soso-chip';
 iconMap.define({
@@ -136,6 +137,6 @@ __decorate([
     __metadata("design:type", Object)
 ], SosoChip.prototype, "checked", void 0);
 SosoChip = __decorate([
-    customElement('soso-chip')
+    element('soso-chip')
 ], SosoChip);
 export { SosoChip };

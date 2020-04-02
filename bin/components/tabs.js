@@ -7,9 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { LitElement, html, customElement, css, query, property } from 'lit-element';
+import { LitElement, html, css, query, property } from 'lit-element';
 import { flex } from '../styles/flex';
 import { fire } from '../utils/ui-utils';
+import { element } from '../registry';
 import './button';
 let SosoTab = class SosoTab extends LitElement {
     constructor() {
@@ -65,7 +66,7 @@ __decorate([
     __metadata("design:type", Object)
 ], SosoTab.prototype, "value", void 0);
 SosoTab = __decorate([
-    customElement('soso-tab')
+    element('soso-tab')
 ], SosoTab);
 export { SosoTab };
 let SosoTabBar = class SosoTabBar extends LitElement {
@@ -176,6 +177,6 @@ __decorate([
     __metadata("design:type", HTMLDivElement)
 ], SosoTabBar.prototype, "tabPanel", void 0);
 SosoTabBar = __decorate([
-    customElement('soso-tab-bar')
+    element('soso-tab-bar')
 ], SosoTabBar);
 export { SosoTabBar };

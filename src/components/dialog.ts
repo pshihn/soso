@@ -1,7 +1,8 @@
-import { LitElement, html, TemplateResult, customElement, property, css, CSSResultArray } from 'lit-element';
+import { LitElement, html, TemplateResult, property, css, CSSResultArray } from 'lit-element';
 import { flex } from '../styles/flex';
+import { element } from '../registry';
 
-@customElement('soso-dialog-container')
+@element('soso-dialog-container')
 export class SosoDialogContainer extends LitElement {
   @property() open = false;
 

@@ -1,7 +1,8 @@
-import { LitElement, html, TemplateResult, customElement, css, CSSResultArray, query, property } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultArray, query, property } from 'lit-element';
 import { flex } from '../styles/flex';
+import { element } from '../registry';
 
-@customElement('soso-text-area')
+@element('soso-text-area')
 export class SosoTextArea extends LitElement {
   @property() label = '';
   @property({ type: Boolean }) disabled = false;

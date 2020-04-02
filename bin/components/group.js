@@ -7,9 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { LitElement, html, customElement, css, property, query } from 'lit-element';
+import { LitElement, html, css, property, query } from 'lit-element';
 import { flex } from '../styles/flex';
 import { iconMap } from './icon-map';
+import { element } from '../registry';
 import './icon';
 const ICON_KEY = 'soso-group';
 iconMap.define({
@@ -167,6 +168,6 @@ __decorate([
     __metadata("design:type", HTMLDivElement)
 ], SosoGroup.prototype, "innerContent", void 0);
 SosoGroup = __decorate([
-    customElement('soso-group')
+    element('soso-group')
 ], SosoGroup);
 export { SosoGroup };

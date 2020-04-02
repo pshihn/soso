@@ -7,9 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { LitElement, html, customElement, property, css } from 'lit-element';
+import { LitElement, html, property, css } from 'lit-element';
 import { iconMap } from './icon-map';
 import { fire } from '../utils/ui-utils';
+import { element } from '../registry';
 import './icon';
 const ICON_KEY = 'soso-checkbox';
 iconMap.define({
@@ -110,6 +111,6 @@ __decorate([
     __metadata("design:type", Object)
 ], SosoCheckbox.prototype, "checked", void 0);
 SosoCheckbox = __decorate([
-    customElement('soso-checkbox')
+    element('soso-checkbox')
 ], SosoCheckbox);
 export { SosoCheckbox };

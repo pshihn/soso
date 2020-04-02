@@ -1,6 +1,7 @@
-import { LitElement, html, TemplateResult, customElement, property, css, CSSResult } from 'lit-element';
+import { LitElement, html, TemplateResult, property, css, CSSResult } from 'lit-element';
 import { iconMap } from './icon-map';
 import { fire } from '../utils/ui-utils';
+import { element } from '../registry';
 import './icon';
 
 const ICON_KEY = 'soso-checkbox';
@@ -9,7 +10,7 @@ iconMap.define({
   'unfilled': 'M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z'
 }, ICON_KEY);
 
-@customElement('soso-checkbox')
+@element('soso-checkbox')
 export class SosoCheckbox extends LitElement {
   @property({ type: Boolean }) checked = false;
 

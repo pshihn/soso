@@ -1,7 +1,8 @@
-import { LitElement, html, TemplateResult, customElement, property, css, CSSResult, PropertyValues } from 'lit-element';
+import { LitElement, html, TemplateResult, property, css, CSSResult, PropertyValues } from 'lit-element';
+import { element } from '../registry';
 import './icon';
 
-@customElement('soso-icon-button')
+@element('soso-icon-button')
 export class SosoIconButton extends LitElement {
   @property({ type: String }) icon?: string;
   @property({ type: String }) iconkey?: string;

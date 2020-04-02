@@ -1,6 +1,7 @@
-import { LitElement, html, TemplateResult, customElement, property, css, CSSResult, query } from 'lit-element';
+import { LitElement, html, TemplateResult, property, css, CSSResult, query } from 'lit-element';
+import { element } from '../registry';
 
-@customElement('soso-file-button')
+@element('soso-file-button')
 export class SosoFileButton extends LitElement {
   @property({ type: String }) accept?: string;
 

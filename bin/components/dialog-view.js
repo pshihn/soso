@@ -7,7 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { LitElement, html, customElement, property, css } from 'lit-element';
+import { LitElement, html, property, css } from 'lit-element';
+import { element } from '../registry';
 let SosoDialogView = class SosoDialogView extends LitElement {
     constructor() {
         super(...arguments);
@@ -67,6 +68,6 @@ __decorate([
     __metadata("design:type", Object)
 ], SosoDialogView.prototype, "label", void 0);
 SosoDialogView = __decorate([
-    customElement('soso-dialog-view')
+    element('soso-dialog-view')
 ], SosoDialogView);
 export { SosoDialogView };
