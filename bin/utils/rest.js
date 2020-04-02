@@ -83,7 +83,6 @@ export async function postFile(url, formData, headerParams) {
             if (status === 0 || status >= 400) {
                 if (request.responseText) {
                     reject({ status, message: request.responseText });
-                    ;
                 }
                 else {
                     reject({ status, message: 'Upload request failed with code: ' + status });

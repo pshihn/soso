@@ -37,9 +37,9 @@ export class SelectionController {
     if (!this.has(element)) {
       return;
     }
-    if (e.key == 'ArrowRight' || e.key == 'ArrowDown') {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
       this.next(element);
-    } else if (e.key == 'ArrowLeft' || e.key == 'ArrowUp') {
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
       this.previous(element);
     }
   }
@@ -80,7 +80,7 @@ export class SelectionController {
     const set = this.getSet(element.name);
     const currentFocusedSet = this.focusedSet;
     this.focusedSet = set;
-    if (currentFocusedSet != set && set.selected && set.selected != element) {
+    if (currentFocusedSet !== set && set.selected && set.selected !== element) {
       set.selected!.focusNative();
     }
   }
@@ -90,7 +90,7 @@ export class SelectionController {
     if (!set.ordered) {
       set.ordered = Array.from(set.set);
       set.ordered.sort((a, b) =>
-        a.compareDocumentPosition(b) == Node.DOCUMENT_POSITION_PRECEDING ? 1 : 0
+        a.compareDocumentPosition(b) === Node.DOCUMENT_POSITION_PRECEDING ? 1 : 0
       );
     }
     return set.ordered;
@@ -113,7 +113,7 @@ export class SelectionController {
     const set = this.getSet(element.name);
     set.set.delete(element);
     set.ordered = null;
-    if (set.selected == element) {
+    if (set.selected === element) {
       set.selected = null;
     }
   }
@@ -126,7 +126,7 @@ export class SelectionController {
     if (element.checked) {
       const set = this.getSet(element.name);
       for (const e of set.set) {
-        e.checked = (e == element);
+        e.checked = (e === element);
       }
       set.selected = element;
     }
