@@ -5,6 +5,7 @@ export declare class SosoIconButton extends LitElement {
     iconkey?: string;
     disabled: boolean;
     customSvg?: string;
+    label?: string;
     static get styles(): CSSResult;
     render(): TemplateResult;
     updated(changed: PropertyValues): void;

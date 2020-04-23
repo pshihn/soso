@@ -76,7 +76,7 @@ let SosoFab = class SosoFab extends LitElement {
     }
     render() {
         return html `
-    <button>
+    <button aria-label="${this.label || this.icon}">
       <soso-icon .icon="${this.icon}" .iconkey="${this.iconkey}" .customSvg="${this.customSvg}"></soso-icon>
     </button>`;
     }
@@ -93,6 +93,10 @@ __decorate([
     property(),
     __metadata("design:type", String)
 ], SosoFab.prototype, "customSvg", void 0);
+__decorate([
+    property(),
+    __metadata("design:type", String)
+], SosoFab.prototype, "label", void 0);
 SosoFab = __decorate([
     element('soso-fab')
 ], SosoFab);

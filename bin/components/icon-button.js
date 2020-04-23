@@ -71,7 +71,7 @@ let SosoIconButton = class SosoIconButton extends LitElement {
     }
     render() {
         return html `
-    <button ?disabled="${this.disabled}">
+    <button aria-label="${this.label || this.icon}" ?disabled="${this.disabled}">
       <soso-icon .icon="${this.icon}" .iconkey="${this.iconkey}" .customSvg="${this.customSvg}"></soso-icon>
     </button>`;
     }
@@ -97,6 +97,10 @@ __decorate([
     property(),
     __metadata("design:type", String)
 ], SosoIconButton.prototype, "customSvg", void 0);
+__decorate([
+    property(),
+    __metadata("design:type", String)
+], SosoIconButton.prototype, "label", void 0);
 SosoIconButton = __decorate([
     element('soso-icon-button')
 ], SosoIconButton);

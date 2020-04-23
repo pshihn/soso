@@ -7,6 +7,7 @@ export class SosoFab extends LitElement {
   @property({ type: String }) icon?: string;
   @property({ type: String }) iconkey?: string;
   @property() customSvg?: string;
+  @property() label?: string;
 
   static get styles(): CSSResult {
     return css`
@@ -74,7 +75,7 @@ export class SosoFab extends LitElement {
 
   render(): TemplateResult {
     return html`
-    <button>
+    <button aria-label="${this.label || this.icon}">
       <soso-icon .icon="${this.icon}" .iconkey="${this.iconkey}" .customSvg="${this.customSvg}"></soso-icon>
     </button>`;
   }
