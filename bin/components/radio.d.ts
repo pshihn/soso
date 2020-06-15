@@ -15,4 +15,5 @@ export declare class SosoRadio extends LitElement implements Checkable {
     disconnectedCallback(): void;
     firstUpdated(): void;
     focusNative(): void;
+    focus(): void;
 }

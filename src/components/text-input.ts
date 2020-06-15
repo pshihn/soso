@@ -196,6 +196,15 @@ export class SosoTextInput extends LitElement {
     `;
   }
 
+  focus() {
+    if (this.shadowRoot) {
+      const btn = this.shadowRoot.querySelector('input');
+      if (btn) {
+        btn.focus();
+      }
+    }
+  }
+
   firstUpdated() {
     if (this.pendingValue) {
       this.input!.value = this.pendingValue;

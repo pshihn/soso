@@ -7,4 +7,5 @@ export declare class SosoFileButton extends LitElement {
     render(): TemplateResult;
     private fileChanged;
     clear(): void;
+    focus(): void;
 }

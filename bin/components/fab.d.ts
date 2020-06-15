@@ -7,4 +7,5 @@ export declare class SosoFab extends LitElement {
     label?: string;
     static get styles(): CSSResult;
     render(): TemplateResult;
+    focus(): void;
 }

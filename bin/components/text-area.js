@@ -166,6 +166,14 @@ let SosoTextArea = class SosoTextArea extends LitElement {
     </div>
     `;
     }
+    focus() {
+        if (this.shadowRoot) {
+            const btn = this.shadowRoot.querySelector('textarea');
+            if (btn) {
+                btn.focus();
+            }
+        }
+    }
     firstUpdated() {
         if (this.pendingValue) {
             this.input.value = this.pendingValue;

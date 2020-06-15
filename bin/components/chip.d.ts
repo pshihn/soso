@@ -6,4 +6,5 @@ export declare class SosoChip extends LitElement {
     render(): TemplateResult;
     private onCheck;
     private toggle;
+    focus(): void;
 }

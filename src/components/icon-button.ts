@@ -77,4 +77,13 @@ export class SosoIconButton extends LitElement {
       this.style.pointerEvents = this.disabled ? 'none' : null;
     }
   }
+
+  focus() {
+    if (this.shadowRoot) {
+      const btn = this.shadowRoot.querySelector('button');
+      if (btn) {
+        btn.focus();
+      }
+    }
+  }
 }

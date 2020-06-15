@@ -146,6 +146,14 @@ let SosoRadio = class SosoRadio extends LitElement {
             this.button.focus();
         }
     }
+    focus() {
+        if (this.shadowRoot) {
+            const btn = this.shadowRoot.querySelector('button');
+            if (btn) {
+                btn.focus();
+            }
+        }
+    }
 };
 __decorate([
     property({ type: Boolean }),

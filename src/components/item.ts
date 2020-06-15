@@ -71,4 +71,13 @@ export class SosoItem extends LitElement {
       </span>
     </button>`;
   }
+
+  focus() {
+    if (this.shadowRoot) {
+      const btn = this.shadowRoot.querySelector('button');
+      if (btn) {
+        btn.focus();
+      }
+    }
+  }
 }

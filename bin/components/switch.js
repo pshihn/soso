@@ -133,6 +133,14 @@ let SosoSwitch = class SosoSwitch extends LitElement {
         this.checked = !this.checked;
         fire(this, 'change', { checked: this.checked });
     }
+    focus() {
+        if (this.shadowRoot) {
+            const btn = this.shadowRoot.querySelector('button');
+            if (btn) {
+                btn.focus();
+            }
+        }
+    }
 };
 __decorate([
     property({ type: Boolean }),

@@ -11,6 +11,7 @@ export declare class SosoTextInput extends LitElement {
     private pendingValue?;
     static get styles(): CSSResultArray;
     render(): TemplateResult;
+    focus(): void;
     firstUpdated(): void;
     private onInput;
     private onFocus;

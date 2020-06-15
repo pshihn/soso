@@ -4,4 +4,5 @@ export declare class SosoSwitch extends LitElement {
     static get styles(): CSSResult;
     render(): TemplateResult;
     private toggle;
+    focus(): void;
 }

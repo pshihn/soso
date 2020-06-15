@@ -97,4 +97,13 @@ export class SosoFileButton extends LitElement {
       this.fileInput.files = null;
     }
   }
+
+  focus() {
+    if (this.shadowRoot) {
+      const btn = this.shadowRoot.querySelector('#fi') as HTMLInputElement;
+      if (btn) {
+        btn.focus();
+      }
+    }
+  }
 }

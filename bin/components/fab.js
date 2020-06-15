@@ -80,6 +80,14 @@ let SosoFab = class SosoFab extends LitElement {
       <soso-icon .icon="${this.icon}" .iconkey="${this.iconkey}" .customSvg="${this.customSvg}"></soso-icon>
     </button>`;
     }
+    focus() {
+        if (this.shadowRoot) {
+            const btn = this.shadowRoot.querySelector('button');
+            if (btn) {
+                btn.focus();
+            }
+        }
+    }
 };
 __decorate([
     property({ type: String }),

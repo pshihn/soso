@@ -95,6 +95,14 @@ let SosoFileButton = class SosoFileButton extends LitElement {
             this.fileInput.files = null;
         }
     }
+    focus() {
+        if (this.shadowRoot) {
+            const btn = this.shadowRoot.querySelector('#fi');
+            if (btn) {
+                btn.focus();
+            }
+        }
+    }
 };
 __decorate([
     property({ type: String }),

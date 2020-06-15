@@ -5,4 +5,5 @@ export declare class SosoCheckbox extends LitElement {
     static get styles(): CSSResult;
     render(): TemplateResult;
     private toggle;
+    focus(): void;
 }

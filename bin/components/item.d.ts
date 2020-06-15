@@ -4,4 +4,5 @@ export declare class SosoItem extends LitElement {
     selected: boolean;
     static get styles(): CSSResult;
     render(): TemplateResult;
+    focus(): void;
 }
