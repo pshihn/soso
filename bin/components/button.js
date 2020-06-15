@@ -127,7 +127,7 @@ let SosoButton = class SosoButton extends LitElement {
     }
     updated(changed) {
         if (changed.has('disabled')) {
-            this.style.pointerEvents = this.disabled ? 'none' : null;
+            this.style.pointerEvents = this.disabled ? 'none' : '';
         }
     }
     focus() {
