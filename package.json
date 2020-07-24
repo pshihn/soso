@@ -1,6 +1,6 @@
 {
   "name": "@slickstream/soso",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Lightweight set of custom elements used in web dev",
   "main": "index.js",
   "scripts": {
