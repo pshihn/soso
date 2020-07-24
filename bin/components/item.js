@@ -59,6 +59,7 @@ let SosoItem = class SosoItem extends LitElement {
     button span {
       display: inline-block;
       transition: transform 0.2s ease;
+      pointer-events: none;
     }
     button:active span {
       transform: scale(1.02);

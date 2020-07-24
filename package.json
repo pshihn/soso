@@ -1,6 +1,6 @@
 {
   "name": "@slickstream/soso",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Lightweight set of custom elements used in web dev",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,6 @@
   "devDependencies": {
     "lit-element": "^2.3.1",
     "tslint": "^6.1.2",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.7"
   }
 }
