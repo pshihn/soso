@@ -6,4 +6,4 @@ export declare function get<T>(url: string, includeCredentials?: boolean, header
 export declare function post<T>(url: string, data: any, includeCredentials?: boolean, headerParams?: Params): Promise<T>;
 export declare function del(url: string, includeCredentials?: boolean, headerParams?: Params): Promise<Response>;
 export declare function beacon(url: string, data: any): boolean;
-export declare function postFile<T>(url: string, formData: FormData, headerParams?: Params): Promise<T>;
+export declare function postFile<T>(url: string, formData: FormData, headerParams?: Params, includeCredentials?: boolean): Promise<T>;

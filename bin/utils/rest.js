@@ -68,10 +68,10 @@ export function beacon(url, data) {
     }
     return false;
 }
-export async function postFile(url, formData, headerParams) {
+export async function postFile(url, formData, headerParams, includeCredentials = true) {
     return new Promise((resolve, reject) => {
         const request = new XMLHttpRequest();
-        request.withCredentials = true;
+        request.withCredentials = includeCredentials;
         request.open('POST', url);
         if (headerParams) {
             for (const name in headerParams) {

@@ -76,10 +76,10 @@ export function beacon(url: string, data: any): boolean {
   return false;
 }
 
-export async function postFile<T>(url: string, formData: FormData, headerParams?: Params): Promise<T> {
+export async function postFile<T>(url: string, formData: FormData, headerParams?: Params, includeCredentials: boolean = true): Promise<T> {
   return new Promise((resolve, reject) => {
     const request = new XMLHttpRequest();
-    request.withCredentials = true;
+    request.withCredentials = includeCredentials;
     request.open('POST', url);
     if (headerParams) {
       for (const name in headerParams) {
