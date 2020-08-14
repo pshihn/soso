@@ -111,7 +111,7 @@ export class SosoDialogHelper {
             this.view = undefined;
         }
         if (!this.dlg) {
-            this.dlg = new SosoDialogContainer();
+            this.dlg = document.createElement('soso-dialog-container');
             document.body.appendChild(this.dlg);
         }
         this.dlg.appendChild(node);
