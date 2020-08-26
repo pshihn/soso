@@ -6,6 +6,7 @@ import './icon';
 export class SosoFab extends LitElement {
   @property({ type: String }) icon?: string;
   @property({ type: String }) iconkey?: string;
+  @property({ type: String }) image?: string;
   @property() customSvg?: string;
   @property() label?: string;
 
@@ -16,7 +17,11 @@ export class SosoFab extends LitElement {
       color: white;
     }
     button {
-      background: var(--soso-fab-background, #018786);
+      background-color: var(--soso-fab-background, #018786);
+      background-size: cover;
+      background-origin: border-box;
+      background-position: 50% 50%;
+      box-sizing: border-box;
       cursor: pointer;
       outline: none;
       border: none;
@@ -74,8 +79,9 @@ export class SosoFab extends LitElement {
   }
 
   render(): TemplateResult {
+    const style = (this.image || '').trim() ? `background-image:url("${this.image!.trim()}")` : '';
     return html`
-    <button aria-label="${this.label || this.icon}">
+    <button aria-label="${this.label || this.icon || ''}" style="${style}">
       <soso-icon .icon="${this.icon}" .iconkey="${this.iconkey}" .customSvg="${this.customSvg}"></soso-icon>
     </button>`;
   }

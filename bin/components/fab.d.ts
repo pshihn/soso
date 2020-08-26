@@ -3,6 +3,7 @@ import './icon';
 export declare class SosoFab extends LitElement {
     icon?: string;
     iconkey?: string;
+    image?: string;
     customSvg?: string;
     label?: string;
     static get styles(): CSSResult;
