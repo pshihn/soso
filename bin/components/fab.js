@@ -18,7 +18,11 @@ let SosoFab = class SosoFab extends LitElement {
       color: white;
     }
     button {
-      background: var(--soso-fab-background, #018786);
+      background-color: var(--soso-fab-background, #018786);
+      background-size: cover;
+      background-origin: border-box;
+      background-position: 50% 50%;
+      box-sizing: border-box;
       cursor: pointer;
       outline: none;
       border: none;
@@ -75,8 +79,9 @@ let SosoFab = class SosoFab extends LitElement {
     `;
     }
     render() {
+        const style = (this.image || '').trim() ? `background-image:url("${this.image.trim()}")` : '';
         return html `
-    <button aria-label="${this.label || this.icon}">
+    <button aria-label="${this.label || this.icon || ''}" style="${style}">
       <soso-icon .icon="${this.icon}" .iconkey="${this.iconkey}" .customSvg="${this.customSvg}"></soso-icon>
     </button>`;
     }
@@ -97,6 +102,10 @@ __decorate([
     property({ type: String }),
     __metadata("design:type", String)
 ], SosoFab.prototype, "iconkey", void 0);
+__decorate([
+    property({ type: String }),
+    __metadata("design:type", String)
+], SosoFab.prototype, "image", void 0);
 __decorate([
     property(),
     __metadata("design:type", String)
