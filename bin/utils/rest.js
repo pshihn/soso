@@ -98,7 +98,8 @@ export async function postFile(url, formData, headerParams, includeCredentials =
             }
         };
         request.onerror = (err) => {
-            reject({ status: 0, message: `There was a network error on file upload: ${err}` });
+            console.error(err);
+            reject({ status: 0, message: `There was a network error on file upload. This could happen because of a network timeout while uploading a large file, or if the network connection drops.` });
         };
         request.send(formData);
     });
