@@ -14,6 +14,7 @@ export class SosoIconButton extends LitElement {
     return css`
     :host {
       display: inline-block;
+      line-height: 1;
     }
     button {
       background: none;
@@ -26,6 +27,7 @@ export class SosoIconButton extends LitElement {
       color: inherit;
       user-select: none;
       position: relative;
+      display: block;
     }
     button::before {
       content: '';
