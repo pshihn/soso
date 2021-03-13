@@ -45,6 +45,8 @@ export class SosoIconButton extends LitElement {
     }
     button soso-icon {
       transition: transform 0.3s ease;
+      width: var(--soso-button-icon-size, 24px);
+      height: var(--soso-button-icon-size, 24px);
     }
     button:active soso-icon {
       transform: scale(1.15);
