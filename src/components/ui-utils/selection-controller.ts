@@ -1,7 +1,7 @@
 const selectionController = Symbol('soso-selection-controller');
 
 export interface Checkable extends HTMLElement {
-  checked: Boolean;
+  checked: boolean;
   name: string;
   focusNative(): void;
 }
@@ -81,7 +81,7 @@ export class SelectionController {
     const currentFocusedSet = this.focusedSet;
     this.focusedSet = set;
     if (currentFocusedSet !== set && set.selected && set.selected !== element) {
-      set.selected!.focusNative();
+      set.selected.focusNative();
     }
   }
 

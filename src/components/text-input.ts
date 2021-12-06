@@ -12,11 +12,8 @@ export class SosoTextInput extends LitElement {
   @property({ type: String }) autocomplete = '';
   @property() placeholder = '';
 
-  @query('#container')
-  private container?: HTMLDivElement;
-
-  @query('input')
-  input?: HTMLInputElement;
+  @query('#container') private container?: HTMLDivElement;
+  @query('input') input?: HTMLInputElement;
 
   private pendingValue?: string;
 

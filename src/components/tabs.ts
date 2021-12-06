@@ -106,7 +106,7 @@ export class SosoTabBar extends LitElement {
 
   private resizeListener = () => {
     requestAnimationFrame(() => requestAnimationFrame(() => this.refreshSelectionBar()));
-  }
+  };
 
   firstUpdated() {
     window.addEventListener('resize', this.resizeListener, { passive: true });
