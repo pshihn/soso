@@ -1,4 +1,5 @@
-import { LitElement, html, TemplateResult, css, CSSResultArray, query, property } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
+import { property, query } from 'lit/decorators';
 import { flex } from '../styles/flex';
 import { element } from '../registry';
 
@@ -19,7 +20,7 @@ export class SosoTextInput extends LitElement {
 
   private pendingValue?: string;
 
-  static get styles(): CSSResultArray {
+  static get styles(): CSSResultGroup {
     return [
       flex,
       css`

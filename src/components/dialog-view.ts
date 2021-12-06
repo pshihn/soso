@@ -1,11 +1,12 @@
-import { LitElement, html, TemplateResult, property, css, CSSResult } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
+import { property } from 'lit/decorators';
 import { element } from '../registry';
 
 @element('soso-dialog-view')
 export class SosoDialogView extends LitElement {
   @property() label = '';
 
-  static get styles(): CSSResult {
+  static get styles(): CSSResultGroup {
     return css`
     :host {
       display: block;

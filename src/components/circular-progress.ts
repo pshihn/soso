@@ -1,10 +1,10 @@
-import { LitElement, html, TemplateResult, css, CSSResult } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
 import { element } from '../registry';
 
 @element('soso-circular-progress')
 export class SosoCircularProgress extends LitElement {
 
-    static get styles(): CSSResult {
+    static get styles(): CSSResultGroup {
         return css`
     :host {
       display: inline-block;

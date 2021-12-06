@@ -1,4 +1,5 @@
-import { LitElement, html, TemplateResult, property, css, CSSResult, PropertyValues } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultGroup, PropertyValues } from 'lit';
+import { property } from 'lit/decorators';
 import { iconMap } from './icon-map';
 import { element } from '../registry';
 
@@ -8,7 +9,7 @@ export class SosoIcon extends LitElement {
   @property({ type: String }) iconkey?: string;
   @property() customSvg?: string;
 
-  static get styles(): CSSResult {
+  static get styles(): CSSResultGroup {
     return css`
       :host {
         display: -ms-inline-flexbox;

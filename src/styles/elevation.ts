@@ -1,4 +1,4 @@
-import { css, CSSResult } from 'lit-element';
+import { css, CSSResult } from 'lit';
 
 export const elevation: CSSResult = css`
 .z1 {

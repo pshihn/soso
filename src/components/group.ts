@@ -1,4 +1,5 @@
-import { LitElement, html, TemplateResult, css, CSSResultArray, property, query } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
+import { property, query } from 'lit/decorators';
 import { flex } from '../styles/flex';
 import { iconMap } from './icon-map';
 import { element } from '../registry';
@@ -18,7 +19,7 @@ export class SosoGroup extends LitElement {
   @query('#inner') private inner?: HTMLDivElement;
   @query('#innerContent') private innerContent?: HTMLDivElement;
 
-  static get styles(): CSSResultArray {
+  static get styles(): CSSResultGroup {
     return [
       flex,
       css`

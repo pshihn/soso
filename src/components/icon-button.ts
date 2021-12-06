@@ -1,4 +1,5 @@
-import { LitElement, html, TemplateResult, property, css, CSSResult, PropertyValues } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultGroup, PropertyValues } from 'lit';
+import { property } from 'lit/decorators';
 import { element } from '../registry';
 import './icon';
 
@@ -10,7 +11,7 @@ export class SosoIconButton extends LitElement {
   @property() customSvg?: string;
   @property() label?: string;
 
-  static get styles(): CSSResult {
+  static get styles(): CSSResultGroup {
     return css`
     :host {
       display: inline-block;

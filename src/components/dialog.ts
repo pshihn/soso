@@ -1,4 +1,5 @@
-import { LitElement, html, TemplateResult, property, css, CSSResultArray } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
+import { property } from 'lit/decorators';
 import { flex } from '../styles/flex';
 import { element } from '../registry';
 
@@ -6,7 +7,7 @@ import { element } from '../registry';
 export class SosoDialogContainer extends LitElement {
   @property() open = false;
 
-  static get styles(): CSSResultArray {
+  static get styles(): CSSResultGroup {
     return [
       flex,
       css`

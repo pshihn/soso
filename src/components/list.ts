@@ -1,4 +1,5 @@
-import { LitElement, html, TemplateResult, property, css, query, CSSResultArray } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
+import { property, query } from 'lit/decorators';
 import { SosoItem } from './item';
 import { flex } from '../styles/flex';
 import { fire } from '../utils/ui-utils';
@@ -12,7 +13,7 @@ export class SosoList extends LitElement {
   @query('slot')
   private slotElement?: HTMLElement;
 
-  static get styles(): CSSResultArray {
+  static get styles(): CSSResultGroup {
     return [
       flex,
       css`

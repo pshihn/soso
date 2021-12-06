@@ -1,4 +1,5 @@
-import { LitElement, html, TemplateResult, property, css, CSSResult } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
+import { property } from 'lit/decorators';
 import { element } from '../registry';
 import './icon';
 
@@ -10,7 +11,7 @@ export class SosoFab extends LitElement {
   @property() customSvg?: string;
   @property() label?: string;
 
-  static get styles(): CSSResult {
+  static get styles(): CSSResultGroup {
     return css`
     :host {
       display: inline-block; 
