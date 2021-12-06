@@ -1,5 +1,5 @@
 import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
-import { property } from 'lit/decorators';
+import { property } from 'lit/decorators.js';
 import { element } from '../registry';
 
 @element('soso-item')

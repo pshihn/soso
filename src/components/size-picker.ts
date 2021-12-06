@@ -1,5 +1,5 @@
 import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
-import { query } from 'lit/decorators';
+import { query } from 'lit/decorators.js';
 import { fire } from '../utils/ui-utils';
 import { element } from '../registry';
 

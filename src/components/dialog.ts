@@ -1,5 +1,5 @@
 import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
-import { property } from 'lit/decorators';
+import { property } from 'lit/decorators.js';
 import { flex } from '../styles/flex';
 import { element } from '../registry';
 

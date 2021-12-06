@@ -1,5 +1,5 @@
 import { LitElement, html, TemplateResult, css, CSSResultGroup, PropertyValues } from 'lit';
-import { property } from 'lit/decorators';
+import { property } from 'lit/decorators.js';
 import { element } from '../registry';
 import './icon';
 
