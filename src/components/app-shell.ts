@@ -1,4 +1,5 @@
-import { LitElement, html, TemplateResult, css, CSSResult, property } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
+import { property } from 'lit/decorators';
 import { element } from '../registry';
 
 @element('soso-app-shell')
@@ -7,7 +8,7 @@ export class SososAppShell extends LitElement {
 
   private resizeListener = this.onResize.bind(this);
 
-  static get styles(): CSSResult {
+  static get styles(): CSSResultGroup {
     return css`
     :host {
       display: block;

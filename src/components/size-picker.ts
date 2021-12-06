@@ -1,4 +1,5 @@
-import { LitElement, html, TemplateResult, css, CSSResult, query } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
+import { query } from 'lit/decorators';
 import { fire } from '../utils/ui-utils';
 import { element } from '../registry';
 
@@ -8,7 +9,7 @@ export class SosoSizePicker extends LitElement {
   private range?: HTMLInputElement;
   private pendingValue?: number;
 
-  static get styles(): CSSResult {
+  static get styles(): CSSResultGroup {
     return css`
       :host {
         display: inline-block;

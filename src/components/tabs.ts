@@ -1,4 +1,5 @@
-import { LitElement, html, TemplateResult, css, CSSResultArray, query, property } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
+import { property, query } from 'lit/decorators';
 import { flex } from '../styles/flex';
 import { fire } from '../utils/ui-utils';
 import { element } from '../registry';
@@ -9,7 +10,7 @@ export class SosoTab extends LitElement {
   @property({ type: Boolean }) selected = false;
   @property({ type: String }) value = '';
 
-  static get styles(): CSSResultArray {
+  static get styles(): CSSResultGroup {
     return [
       css`
       :host {
@@ -59,7 +60,7 @@ export class SosoTabBar extends LitElement {
 
   private activeTab?: SosoTab;
 
-  static get styles(): CSSResultArray {
+  static get styles(): CSSResultGroup {
     return [
       flex,
       css`
@@ -105,7 +106,7 @@ export class SosoTabBar extends LitElement {
 
   private resizeListener = () => {
     requestAnimationFrame(() => requestAnimationFrame(() => this.refreshSelectionBar()));
-  }
+  };
 
   firstUpdated() {
     window.addEventListener('resize', this.resizeListener, { passive: true });

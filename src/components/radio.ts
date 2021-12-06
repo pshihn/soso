@@ -1,4 +1,5 @@
-import { LitElement, html, TemplateResult, property, css, CSSResult, query } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
+import { property, query } from 'lit/decorators';
 import { iconMap } from './icon-map';
 import { fire } from '../utils/ui-utils';
 import { SelectionController, Checkable } from './ui-utils/selection-controller';
@@ -28,7 +29,7 @@ export class SosoRadio extends LitElement implements Checkable {
     }
   }
 
-  static get styles(): CSSResult {
+  static get styles(): CSSResultGroup {
     return css`
     :host {
       display: inline-block;

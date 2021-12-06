@@ -1,4 +1,5 @@
-import { LitElement, html, TemplateResult, property, css, CSSResult, query } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
+import { property, query } from 'lit/decorators';
 import { fire } from '../utils/ui-utils';
 import { element } from '../registry';
 
@@ -18,7 +19,7 @@ export class SosoPageSelector extends LitElement {
   private pageMap = new Map<string, HTMLElement>();
   private current?: PageElement;
 
-  static get styles(): CSSResult {
+  static get styles(): CSSResultGroup {
     return css`
     :host {
       display: contents;

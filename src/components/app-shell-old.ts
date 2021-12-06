@@ -1,4 +1,5 @@
-import { LitElement, html, TemplateResult, css, CSSResultArray, property } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
+import { property } from 'lit/decorators';
 import { flex } from '../styles/flex';
 import { element } from '../registry';
 
@@ -9,7 +10,7 @@ export class SosoAppShell extends LitElement {
 
   private resizeListener = this.onResize.bind(this);
 
-  static get styles(): CSSResultArray {
+  static get styles(): CSSResultGroup {
     return [
       flex,
       css`

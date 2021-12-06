@@ -1,4 +1,5 @@
-import { LitElement, html, TemplateResult, property, css, CSSResult, query } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
+import { property, query } from 'lit/decorators';
 import { element } from '../registry';
 
 @element('soso-file-button')
@@ -9,7 +10,7 @@ export class SosoFileButton extends LitElement {
 
   private file?: File;
 
-  static get styles(): CSSResult {
+  static get styles(): CSSResultGroup {
     return css`
     :host {
       display: inline-block;

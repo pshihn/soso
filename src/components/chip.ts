@@ -1,4 +1,5 @@
-import { LitElement, html, TemplateResult, property, css, CSSResult } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
+import { property } from 'lit/decorators';
 import { fire } from '../utils/ui-utils';
 import { iconMap } from './icon-map';
 import { element } from '../registry';
@@ -13,7 +14,7 @@ iconMap.define({
 export class SosoChip extends LitElement {
   @property({ type: Boolean }) checked = false;
 
-  static get styles(): CSSResult {
+  static get styles(): CSSResultGroup {
     return css`
     :host {
       display: inline-block;

@@ -1,4 +1,5 @@
-import { LitElement, html, TemplateResult, property, css, CSSResult, PropertyValues } from 'lit-element';
+import { LitElement, html, TemplateResult, css, CSSResultGroup, PropertyValues } from 'lit';
+import { property } from 'lit/decorators';
 import { element } from '../registry';
 
 @element('soso-button')
@@ -7,7 +8,7 @@ export class SosoButton extends LitElement {
   @property({ type: Boolean }) solid = false;
   @property({ type: Boolean }) disabled = false;
 
-  static get styles(): CSSResult {
+  static get styles(): CSSResultGroup {
     return css`
     :host {
       display: inline-block;
