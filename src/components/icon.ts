@@ -1,5 +1,6 @@
-import { LitElement, html, TemplateResult, css, CSSResultGroup, PropertyValues } from 'lit';
+import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
 import { property } from 'lit/decorators.js';
+import { unsafeHTML } from 'lit/directives/unsafe-html';
 import { iconMap } from './icon-map';
 import { element } from '../registry';
 
@@ -42,7 +43,7 @@ export class SosoIcon extends LitElement {
     const icon = this.icon || '';
     const path = iconMap.get(icon, this.iconkey);
     if (this.customSvg) {
-      return html``;
+      return html`${unsafeHTML(this.customSvg)}`;
     }
     return html`
     <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
@@ -51,11 +52,5 @@ export class SosoIcon extends LitElement {
       </g>
     </svg>
     `;
-  }
-
-  updated(changed: PropertyValues) {
-    if (changed.has('customSvg') && this.customSvg) {
-      this.shadowRoot!.innerHTML = this.customSvg;
-    }
   }
 }
