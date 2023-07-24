@@ -1,6 +1,6 @@
 import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
 import { property } from 'lit/decorators.js';
-import { unsafeHTML } from 'lit/directives/unsafe-html';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { iconMap } from './icon-map';
 import { element } from '../registry';
 
