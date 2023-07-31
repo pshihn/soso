@@ -22,7 +22,7 @@ export class SosoDialogView extends LitElement {
       padding: 16px;
       text-transform: capitalize;
       text-align: var(--soso-dialog-title-align, left);
-      background: var(--soso-dialog-title-bg, var(--slick-discovery-highlight-color, #018786));
+      background: white;
       color: var(--soso-dialog-title-color, white);
       border-bottom: var(--soso-dialog-title-border, none);
       letter-spacing: 0.8px;
@@ -46,7 +46,9 @@ export class SosoDialogView extends LitElement {
 
   render(): TemplateResult {
     return html`
-    <div id="toolbar">${this.label}</div>
+    <div id="toolbar">
+      <slot name="toolbar"></slot>
+    </div>
     <div id="content">
       <slot name="main"></slot>
     </div>
